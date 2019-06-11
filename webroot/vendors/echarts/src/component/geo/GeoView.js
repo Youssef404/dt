@@ -26,8 +26,7 @@ define(function (require) {
             var mapDraw = this._mapDraw;
             if (geoModel.get('show')) {
                 mapDraw.draw(geoModel, ecModel, api, this, payload);
-            }
-            else {
+            } else {
                 this._mapDraw.group.removeAll();
             }
         }

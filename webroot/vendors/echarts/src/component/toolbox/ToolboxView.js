@@ -52,8 +52,7 @@ define(function (require) {
                             onclick: featureModel.option.onclick,
                             featureName: featureName
                         };
-                    }
-                    else {
+                    } else {
                         var Feature = featureManager.get(featureName);
                         if (!Feature) {
                             return;
@@ -61,8 +60,7 @@ define(function (require) {
                         feature = new Feature(featureModel);
                     }
                     features[featureName] = feature;
-                }
-                else {
+                } else {
                     feature = features[oldName];
                     // If feature does not exsit.
                     if (!feature) {
@@ -135,7 +133,7 @@ define(function (require) {
                     var path = icon.indexOf('image://') === 0
                         ? (
                             style.image = icon.slice(8),
-                            new graphic.Image({style: style})
+                                new graphic.Image({style: style})
                         )
                         : graphic.makePath(
                             icon.replace('path://', ''),
@@ -153,13 +151,13 @@ define(function (require) {
                     if (toolboxModel.get('showTitle')) {
                         path.__title = titles[iconName];
                         path.on('mouseover', function () {
-                                path.setStyle({
-                                    text: titles[iconName],
-                                    textPosition: hoverStyle.textPosition || 'bottom',
-                                    textFill: hoverStyle.fill || hoverStyle.stroke || '#000',
-                                    textAlign: hoverStyle.textAlign || 'center'
-                                });
-                            })
+                            path.setStyle({
+                                text: titles[iconName],
+                                textPosition: hoverStyle.textPosition || 'bottom',
+                                textFill: hoverStyle.fill || hoverStyle.stroke || '#000',
+                                textAlign: hoverStyle.textAlign || 'center'
+                            });
+                        })
                             .on('mouseout', function () {
                                 path.setStyle({
                                     textFill: null
@@ -200,11 +198,10 @@ define(function (require) {
                         needPutOnTop = true;
                     }
                     var topOffset = needPutOnTop ? (-5 - rect.height) : (itemSize + 8);
-                    if (offsetX + rect.width /  2 > api.getWidth()) {
+                    if (offsetX + rect.width / 2 > api.getWidth()) {
                         hoverStyle.textPosition = ['100%', topOffset];
                         hoverStyle.textAlign = 'right';
-                    }
-                    else if (offsetX - rect.width / 2 < 0) {
+                    } else if (offsetX - rect.width / 2 < 0) {
                         hoverStyle.textPosition = [0, topOffset];
                         hoverStyle.textAlign = 'left';
                     }

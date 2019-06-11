@@ -53,16 +53,14 @@ define(function (require) {
             var roam = bMapModel.get('roam');
             if (roam && roam !== 'scale') {
                 bmap.enableDragging();
-            }
-            else {
+            } else {
                 bmap.disableDragging();
             }
             if (roam && roam !== 'move') {
                 bmap.enableScrollWheelZoom();
                 bmap.enableDoubleClickZoom();
                 bmap.enablePinchToZoom();
-            }
-            else {
+            } else {
                 bmap.disableScrollWheelZoom();
                 bmap.disableDoubleClickZoom();
                 bmap.disablePinchToZoom();

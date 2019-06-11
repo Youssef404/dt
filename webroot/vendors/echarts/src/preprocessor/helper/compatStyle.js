@@ -17,8 +17,7 @@ define(function (require) {
                     opt[styleName] = opt[styleName] || {};
                     if (!opt[styleName].normal) {
                         opt[styleName].normal = normalItemStyleOpt[styleName];
-                    }
-                    else {
+                    } else {
                         zrUtil.merge(opt[styleName].normal, normalItemStyleOpt[styleName]);
                     }
                     normalItemStyleOpt[styleName] = null;
@@ -27,8 +26,7 @@ define(function (require) {
                     opt[styleName] = opt[styleName] || {};
                     if (!opt[styleName].emphasis) {
                         opt[styleName].emphasis = emphasisItemStyleOpt[styleName];
-                    }
-                    else {
+                    } else {
                         zrUtil.merge(opt[styleName].emphasis, emphasisItemStyleOpt[styleName]);
                     }
                     emphasisItemStyleOpt[styleName] = null;
@@ -65,8 +63,7 @@ define(function (require) {
                     if (zrUtil.isArray(mlData[i])) {
                         compatItemStyle(mlData[i][0]);
                         compatItemStyle(mlData[i][1]);
-                    }
-                    else {
+                    } else {
                         compatItemStyle(mlData[i]);
                     }
                 }

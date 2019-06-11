@@ -1,5 +1,5 @@
 // Layout helpers for each component positioning
-define(function(require) {
+define(function (require) {
     'use strict';
 
     var zrUtil = require('zrender/core/util');
@@ -39,12 +39,10 @@ define(function(require) {
                     nextX = moveX;
                     y += currentLineMaxSize + gap;
                     currentLineMaxSize = rect.height;
-                }
-                else {
+                } else {
                     currentLineMaxSize = Math.max(currentLineMaxSize, rect.height);
                 }
-            }
-            else {
+            } else {
                 var moveY = rect.height + (nextChildRect ? (-nextChildRect.y + rect.y) : 0);
                 nextY = y + moveY;
                 // Wrap when width exceeds maxHeight or meet a `newline` group
@@ -53,8 +51,7 @@ define(function(require) {
                     y = 0;
                     nextY = moveY;
                     currentLineMaxSize = rect.width;
-                }
-                else {
+                } else {
                     currentLineMaxSize = Math.max(currentLineMaxSize, rect.width);
                 }
             }
@@ -187,8 +184,7 @@ define(function(require) {
         if (isNaN(width) && isNaN(height)) {
             if (aspect > containerWidth / containerHeight) {
                 width = containerWidth * 0.8;
-            }
-            else {
+            } else {
                 height = containerHeight * 0.8;
             }
         }
@@ -345,8 +341,7 @@ define(function(require) {
             // all origin params in targetOption.
             else if (newValueCount >= enoughParamNumber) {
                 return newParams;
-            }
-            else {
+            } else {
                 // Chose another param from targetOption by priority.
                 // When 'ignoreSize', enoughParamNumber is 1 and those will not happen.
                 for (var i = 0; i < names.length; i++) {

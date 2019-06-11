@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     'use strict';
 
@@ -45,7 +45,7 @@ define(function(require) {
             var barGap = seriesModel.get('barGap');
             var barCategoryGap = seriesModel.get('barCategoryGap');
             // TODO
-            if (barWidth && ! stacks[stackId].width) {
+            if (barWidth && !stacks[stackId].width) {
                 barWidth = Math.min(columnsOnAxis.remainedWidth, barWidth);
                 stacks[stackId].width = barWidth;
                 columnsOnAxis.remainedWidth -= barWidth;
@@ -189,8 +189,7 @@ define(function(require) {
                         width = (width < 0 ? -1 : 1) * barMinHeight;
                     }
                     lastStackCoords[stackId][idx][sign] += width;
-                }
-                else {
+                } else {
                     x = coord[0] + columnOffset;
                     y = lastCoord;
                     width = columnWidth;

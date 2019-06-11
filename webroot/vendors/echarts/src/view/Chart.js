@@ -28,7 +28,8 @@ define(function (require) {
          * @param  {module:echarts/model/Global} ecModel
          * @param  {module:echarts/ExtensionAPI} api
          */
-        init: function (ecModel, api) {},
+        init: function (ecModel, api) {
+        },
 
         /**
          * Render the chart
@@ -37,7 +38,8 @@ define(function (require) {
          * @param  {module:echarts/ExtensionAPI} api
          * @param  {Object} payload
          */
-        render: function (seriesModel, ecModel, api, payload) {},
+        render: function (seriesModel, ecModel, api, payload) {
+        },
 
         /**
          * Highlight series or specified data item
@@ -75,7 +77,8 @@ define(function (require) {
          * @param  {module:echarts/model/Global} ecModel
          * @param  {module:echarts/ExtensionAPI} api
          */
-        dispose: function () {}
+        dispose: function () {
+        }
     };
 
     var chartProto = Chart.prototype;
@@ -83,8 +86,8 @@ define(function (require) {
         = chartProto.updateLayout
         = chartProto.updateVisual
         = function (seriesModel, ecModel, api, payload) {
-            this.render(seriesModel, ecModel, api, payload);
-        };
+        this.render(seriesModel, ecModel, api, payload);
+    };
 
     /**
      * Set state of single element
@@ -101,6 +104,7 @@ define(function (require) {
             }
         }
     }
+
     /**
      * @param  {module:echarts/data/List} data
      * @param  {Object} payload
@@ -111,13 +115,11 @@ define(function (require) {
         if (payload.dataIndex != null) {
             var el = data.getItemGraphicEl(payload.dataIndex);
             elSetState(el, state);
-        }
-        else if (payload.name) {
+        } else if (payload.name) {
             var dataIndex = data.indexOfName(payload.name);
             var el = data.getItemGraphicEl(dataIndex);
             elSetState(el, state);
-        }
-        else {
+        } else {
             data.eachItemGraphicEl(function (el) {
                 elSetState(el, state);
             });

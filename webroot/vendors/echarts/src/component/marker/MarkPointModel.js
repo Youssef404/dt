@@ -9,6 +9,7 @@ define(function (require) {
             modelUtil.LABEL_OPTIONS
         );
     }
+
     var MarkPointModel = require('../../echarts').extendComponentModel({
 
         type: 'markPoint',
@@ -47,8 +48,7 @@ define(function (require) {
                         mpModel = new MarkPointModel(
                             markPointOpt, this, ecModel, opt
                         );
-                    }
-                    else {
+                    } else {
                         mpModel.mergeOption(markPointOpt, ecModel, true);
                     }
                     seriesModel.markPointModel = mpModel;

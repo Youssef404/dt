@@ -143,12 +143,12 @@ define(function (require) {
             var f = interval / exp10;
             if (f === 2) {
                 f = 5;
-            }
-            else { // f is 2 or 5
+            } else { // f is 2 or 5
                 f *= 2;
             }
             return f * exp10;
         }
+
         // Force all the axis fixing the maxSplitNumber.
         zrUtil.each(indicatorAxes, function (indicatorAxis, idx) {
             var rawExtent = axisHelper.getScaleExtent(indicatorAxis, indicatorAxis.model);
@@ -166,8 +166,7 @@ define(function (require) {
                 scale.setInterval(
                     (fixedMax - fixedMin) / splitNumber
                 );
-            }
-            else if (fixedMin != null) {
+            } else if (fixedMin != null) {
                 var max;
                 // User set min, expand extent on the other side
                 do {
@@ -179,8 +178,7 @@ define(function (require) {
 
                     interval = increaseInterval(interval);
                 } while (max < rawExtent[1] && isFinite(max) && isFinite(rawExtent[1]));
-            }
-            else if (fixedMax != null) {
+            } else if (fixedMax != null) {
                 var min;
                 // User set min, expand extent on the other side
                 do {
@@ -189,8 +187,7 @@ define(function (require) {
                     scale.setInterval(interval);
                     interval = increaseInterval(interval);
                 } while (min > rawExtent[0] && isFinite(min) && isFinite(rawExtent[0]));
-            }
-            else {
+            } else {
                 var nicedSplitNumber = scale.getTicks().length - 1;
                 if (nicedSplitNumber > splitNumber) {
                     interval = increaseInterval(interval);

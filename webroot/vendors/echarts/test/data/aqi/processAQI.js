@@ -5,20 +5,15 @@ function processAQI(arr) {
 
         if (aqi <= 50) {
             line[7] = '"优"';
-        }
-        else if (aqi <= 100) {
+        } else if (aqi <= 100) {
             line[7] = '"良"';
-        }
-        else if (aqi <= 150) {
+        } else if (aqi <= 150) {
             line[7] = '"轻度污染"';
-        }
-        else if (aqi <= 200) {
+        } else if (aqi <= 200) {
             line[7] = '"中度污染"';
-        }
-        else if (aqi <= 300) {
+        } else if (aqi <= 300) {
             line[7] = '"重度污染"';
-        }
-        else {
+        } else {
             line[7] = '"严重污染"';
         }
     }

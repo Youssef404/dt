@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
@@ -30,6 +31,7 @@ class EmployeesFixture extends TestFixture
         ],
     ];
     // @codingStandardsIgnoreEnd
+
     /**
      * Init method
      *

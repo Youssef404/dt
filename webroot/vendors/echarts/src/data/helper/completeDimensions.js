@@ -48,8 +48,7 @@ define(function (require) {
             var value = value[dimIndex];
             if (value != null && isFinite(value)) {
                 return false;
-            }
-            else if (zrUtil.isString(value) && value !== '-') {
+            } else if (zrUtil.isString(value) && value !== '-') {
                 return true;
             }
         }
@@ -57,7 +56,7 @@ define(function (require) {
     }
 
     function retrieveValue(o) {
-        return zrUtil.isArray(o) ? o : zrUtil.isObject(o) ? o.value: o;
+        return zrUtil.isArray(o) ? o : zrUtil.isObject(o) ? o.value : o;
     }
 
     return completeDimensions;

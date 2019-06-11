@@ -19,9 +19,9 @@
     <fieldset>
         <legend><?= __('Add Voucher') ?></legend>
         <?php
-            echo $this->Form->control('date', ['empty' => true]);
-            echo $this->Form->control('employee_id', ['options' => $employees, 'empty' => true]);
-            echo $this->Form->control('products._ids', ['options' => $products]);
+        echo $this->Form->control('date', ['empty' => true]);
+        echo $this->Form->control('employee_id', ['options' => $employees, 'empty' => true]);
+        echo $this->Form->control('products._ids', ['options' => $products]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

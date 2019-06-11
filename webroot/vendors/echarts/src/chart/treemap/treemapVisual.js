@@ -69,8 +69,7 @@ define(function (require) {
             thisNodeColor = calculateColor(visuals, node);
             // Apply visual to this node.
             node.setVisual('color', thisNodeColor);
-        }
-        else {
+        } else {
             var mapping = buildVisualMapping(
                 node, nodeModel, nodeLayout, nodeItemStyleModel, visuals, viewChildren
             );
@@ -129,8 +128,8 @@ define(function (require) {
 
     function calculateBorderColor(borderColorSaturation, thisNodeColor) {
         return thisNodeColor != null
-             ? zrColor.modifyHSL(thisNodeColor, null, null, borderColorSaturation)
-             : null;
+            ? zrColor.modifyHSL(thisNodeColor, null, null, borderColorSaturation)
+            : null;
     }
 
     function getValueVisualDefine(visuals, name) {
@@ -173,8 +172,7 @@ define(function (require) {
             opt.mappingMethod = 'category';
             opt.loop = true;
             // categories is ordinal, so do not set opt.categories.
-        }
-        else {
+        } else {
             opt.mappingMethod = 'linear';
         }
 
@@ -206,10 +204,10 @@ define(function (require) {
             var colorMappingBy = mappingType === 'color' && mapping.__drColorMappingBy;
             var value =
                 colorMappingBy === 'index'
-                ? index
-                : colorMappingBy === 'id'
-                ? seriesModel.mapIdToIndex(child.getId())
-                : child.getValue(nodeModel.get('visualDimension'));
+                    ? index
+                    : colorMappingBy === 'id'
+                    ? seriesModel.mapIdToIndex(child.getId())
+                    : child.getValue(nodeModel.get('visualDimension'));
 
             childVisuals[mappingType] = mapping.mapValueToVisual(value);
         }

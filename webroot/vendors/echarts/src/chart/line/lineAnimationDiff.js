@@ -23,7 +23,7 @@ define(function (require) {
         // Find first stacked value with same sign
         while (stackedOn &&
             sign(stackedOn.get(valueDim, idx)) === sign(val)
-        ) {
+            ) {
             stackedOnSameSign = stackedOn;
             break;
         }
@@ -159,8 +159,7 @@ define(function (require) {
                         );
 
                         rawIndices.push(rawIndex);
-                    }
-                    else {
+                    } else {
                         pointAdded = false;
                     }
             }

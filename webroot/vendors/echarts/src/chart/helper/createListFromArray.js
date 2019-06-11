@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
     'use strict';
 
     var List = require('../../data/List');
@@ -16,6 +16,7 @@ define(function(require) {
         }
         return data[i];
     }
+
     function ifNeedCompleteOrdinalData(data) {
         var sampleItem = firstDataNotNull(data);
         return sampleItem != null
@@ -92,8 +93,8 @@ define(function(require) {
         return axisType === 'category'
             ? 'ordinal'
             : axisType === 'time'
-            ? 'time'
-            : 'float';
+                ? 'time'
+                : 'float';
     }
 
     /**
@@ -214,8 +215,7 @@ define(function(require) {
                     for (var i = 0; i < dataLen; i++) {
                         nameList[i] = categories[data[i][result.categoryIndex || 0]];
                     }
-                }
-                else {
+                } else {
                     nameList = categories.slice(0);
                 }
             }

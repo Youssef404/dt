@@ -37,8 +37,7 @@ define(function (require) {
                 valueAxis = coordSys.getAxis(valueDataDim);
 
                 value = zrUtil.retrieve(item.yAxis, item.xAxis);
-            }
-            else {
+            } else {
                 var axisInfo = markerHelper.getAxisInfo(item, data, coordSys, seriesModel);
                 valueDataDim = axisInfo.valueDataDim;
                 valueAxis = axisInfo.valueAxis;
@@ -113,7 +112,7 @@ define(function (require) {
             if (
                 fromCoord && toCoord &&
                 (ifMarkLineHasOnlyDim(1, fromCoord, toCoord, coordSys)
-                || ifMarkLineHasOnlyDim(0, fromCoord, toCoord, coordSys))
+                    || ifMarkLineHasOnlyDim(0, fromCoord, toCoord, coordSys))
             ) {
                 return true;
             }
@@ -136,16 +135,14 @@ define(function (require) {
                 numberUtil.parsePercent(xPx, api.getWidth()),
                 numberUtil.parsePercent(yPx, api.getHeight())
             ];
-        }
-        else {
+        } else {
             // Chart like bar may have there own marker positioning logic
             if (seriesModel.getMarkerPosition) {
                 // Use the getMarkerPoisition
                 point = seriesModel.getMarkerPosition(
                     data.getValues(data.dimensions, idx)
                 );
-            }
-            else {
+            } else {
                 var dims = coordSys.dimensions;
                 var x = data.get(dims[0], idx);
                 var y = data.get(dims[1], idx);
@@ -166,8 +163,7 @@ define(function (require) {
                 var dims = coordSys.dimensions;
                 if (isInifinity(data.get(dims[0], idx))) {
                     point[0] = xAxis.toGlobalCoord(xAxis.getExtent()[isFrom ? 0 : 1]);
-                }
-                else if (isInifinity(data.get(dims[1], idx))) {
+                } else if (isInifinity(data.get(dims[1], idx))) {
                     point[1] = yAxis.toGlobalCoord(yAxis.getExtent()[isFrom ? 0 : 1]);
                 }
             }
@@ -363,9 +359,8 @@ define(function (require) {
                 info.name = coordDim;
                 return info;
             });
-        }
-        else {
-            coordDimsInfos =[{
+        } else {
+            coordDimsInfos = [{
                 name: 'value',
                 type: 'float'
             }];
@@ -388,15 +383,21 @@ define(function (require) {
             return item.value;
         };
         fromData.initData(
-            zrUtil.map(optData, function (item) { return item[0]; }),
+            zrUtil.map(optData, function (item) {
+                return item[0];
+            }),
             null, dimValueGetter
         );
         toData.initData(
-            zrUtil.map(optData, function (item) { return item[1]; }),
+            zrUtil.map(optData, function (item) {
+                return item[1];
+            }),
             null, dimValueGetter
         );
         lineData.initData(
-            zrUtil.map(optData, function (item) { return item[2]; })
+            zrUtil.map(optData, function (item) {
+                return item[2];
+            })
         );
         return {
             from: fromData,

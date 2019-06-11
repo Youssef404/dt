@@ -41,8 +41,7 @@ define(function (require) {
                             if (item instanceof Array) {
                                 fillLabel(item[0]);
                                 fillLabel(item[1]);
-                            }
-                            else {
+                            } else {
                                 fillLabel(item);
                             }
                         });
@@ -56,8 +55,7 @@ define(function (require) {
                         mlModel = new MarkLineModel(
                             markLineOpt, this, ecModel, opt
                         );
-                    }
-                    else {
+                    } else {
                         mlModel.mergeOption(markLineOpt, ecModel, true);
                     }
                     seriesModel.markLineModel = mlModel;

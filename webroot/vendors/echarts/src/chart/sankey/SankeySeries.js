@@ -30,7 +30,7 @@ define(function (require) {
         /**
          * return {module:echarts/data/List}
          */
-        getEdgeData: function() {
+        getEdgeData: function () {
             return this.getGraph().edgeData;
         },
 
@@ -46,8 +46,7 @@ define(function (require) {
                     html += ' : ' + params.value;
                 }
                 return html;
-            }
-            else {
+            } else {
                 return SankeySeries.superCall(this, 'formatTooltip', dataIndex, multipleSeries);
             }
             // dataType === 'node' or empty do not show tooltip by default.
@@ -59,7 +58,7 @@ define(function (require) {
 
             coordinateSystem: 'view',
 
-            layout : null,
+            layout: null,
 
             // the position of the whole view
             left: '5%',

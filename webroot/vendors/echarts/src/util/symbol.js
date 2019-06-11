@@ -1,5 +1,5 @@
 // Symbol factory
-define(function(require) {
+define(function (require) {
 
     'use strict';
 
@@ -283,12 +283,10 @@ define(function(require) {
             var symbolShape = this.shape;
             if (symbolShape && symbolShape.symbolType === 'line') {
                 symbolStyle.stroke = color;
-            }
-            else if (this.__isEmptyBrush) {
+            } else if (this.__isEmptyBrush) {
                 symbolStyle.stroke = color;
                 symbolStyle.fill = '#fff';
-            }
-            else {
+            } else {
                 // FIXME 判断图形默认是填充还是描边，使用 onlyStroke ?
                 symbolStyle.fill && (symbolStyle.fill = color);
                 symbolStyle.stroke && (symbolStyle.stroke = color);
@@ -324,11 +322,9 @@ define(function(require) {
                         height: h
                     }
                 });
-            }
-            else if (symbolType.indexOf('path://') === 0) {
+            } else if (symbolType.indexOf('path://') === 0) {
                 symbolPath = graphic.makePath(symbolType.slice(7), {}, new BoundingRect(x, y, w, h));
-            }
-            else {
+            } else {
                 symbolPath = new Symbol({
                     shape: {
                         symbolType: symbolType,

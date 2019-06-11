@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
     'use strict';
 
     function defaultKeyGetter(item) {
@@ -69,13 +69,11 @@ define(function(require) {
                     if (len) {
                         len === 1 && (newDataIndexMap[key] = null);
                         idx = idx.unshift();
-                    }
-                    else {
+                    } else {
                         newDataIndexMap[key] = null;
                     }
                     this._update && this._update(idx, i);
-                }
-                else {
+                } else {
                     this._remove && this._remove(i);
                 }
             }
@@ -89,8 +87,7 @@ define(function(require) {
                     // idx can never be empty array here. see 'set null' logic above.
                     if (!idx.length) {
                         this._add && this._add(idx);
-                    }
-                    else {
+                    } else {
                         for (var i = 0, len = idx.length; i < len; i++) {
                             this._add && this._add(idx[i]);
                         }
@@ -106,8 +103,7 @@ define(function(require) {
             var existence = map[key];
             if (existence == null) {
                 map[key] = i;
-            }
-            else {
+            } else {
                 if (!existence.length) {
                     map[key] = existence = [existence];
                 }

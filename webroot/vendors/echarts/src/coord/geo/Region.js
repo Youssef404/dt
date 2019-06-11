@@ -35,8 +35,7 @@ define(function (require) {
                 rect.x + rect.width / 2,
                 rect.y + rect.height / 2
             ];
-        }
-        else {
+        } else {
             cp = [cp[0], cp[1]];
         }
         /**
@@ -101,9 +100,8 @@ define(function (require) {
             var aspect = rect.width / rect.height;
             if (!width) {
                 width = aspect * height;
-            }
-            else if (!height) {
-                height = width / aspect ;
+            } else if (!height) {
+                height = width / aspect;
             }
             var target = new BoundingRect(x, y, width, height);
             var transform = rect.calculateTransform(target);

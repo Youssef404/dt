@@ -23,7 +23,8 @@
         init: function (mainEl, chart, opt) {
             opt = opt || {};
 
-            var chartResize = chart ? $.proxy(chart.resize, chart) : function () {};
+            var chartResize = chart ? $.proxy(chart.resize, chart) : function () {
+            };
             if (opt.throttle) {
                 chartResize = throttle(chartResize, opt.throttle, true, false);
             }
@@ -113,7 +114,6 @@
             });
 
 
-
             function resize(x, y, isInit) {
                 var mainOffset = mainEl.offset();
                 var mainPosition = mainEl.position();
@@ -163,8 +163,7 @@
 
         if (isSingle) {
             return createCallback();
-        }
-        else {
+        } else {
             var ret = [];
             for (var i = 0; i < fn.length; i++) {
                 ret[i] = createCallback(i);
@@ -191,16 +190,13 @@
                 if (debounce) {
                     if (trailing) {
                         timer = setTimeout(exec, delay);
-                    }
-                    else if (diff >= 0) {
+                    } else if (diff >= 0) {
                         exec();
                     }
-                }
-                else {
+                } else {
                     if (diff >= 0) {
                         exec();
-                    }
-                    else if (trailing) {
+                    } else if (trailing) {
                         timer = setTimeout(exec, -diff);
                     }
                 }

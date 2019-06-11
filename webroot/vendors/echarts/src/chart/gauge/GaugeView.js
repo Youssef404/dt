@@ -26,8 +26,7 @@ define(function (require) {
         if (labelFormatter) {
             if (typeof labelFormatter === 'string') {
                 label = labelFormatter.replace('{value}', label);
-            }
-            else if (typeof labelFormatter === 'function') {
+            } else if (typeof labelFormatter === 'function') {
                 label = labelFormatter(label);
             }
         }
@@ -252,8 +251,7 @@ define(function (require) {
                         angle += subStep;
                     }
                     angle -= subStep;
-                }
-                else {
+                } else {
                     angle += step;
                 }
             }

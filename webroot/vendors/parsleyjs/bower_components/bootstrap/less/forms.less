@@ -128,7 +128,7 @@ output {
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 1px solid @input-border;
   border-radius: @input-border-radius;
-  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075));
   .transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
 
   // Customize the `:focus` state to imitate native WebKit styles.
@@ -180,6 +180,7 @@ output {
   margin-bottom: 10px;
   padding-left: 20px;
   vertical-align: middle;
+
   label {
     display: inline;
     margin-bottom: 0;
@@ -187,6 +188,7 @@ output {
     cursor: pointer;
   }
 }
+
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -194,6 +196,7 @@ output {
   float: left;
   margin-left: -20px;
 }
+
 .radio + .radio,
 .checkbox + .checkbox {
   margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
@@ -209,6 +212,7 @@ output {
   font-weight: normal;
   cursor: pointer;
 }
+
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
@@ -248,10 +252,12 @@ input[type="checkbox"],
 .has-warning {
   .form-control-validation(@state-warning-text; @state-warning-text; @state-warning-bg);
 }
+
 // Error
 .has-error {
   .form-control-validation(@state-danger-text; @state-danger-text; @state-danger-bg);
 }
+
 // Success
 .has-success {
   .form-control-validation(@state-success-text; @state-success-text; @state-success-bg);
@@ -281,7 +287,6 @@ input[type="checkbox"],
 }
 
 
-
 // Inline forms
 //
 // Make forms appear inline(-block) by adding the `.form-inline` class. Inline
@@ -298,7 +303,7 @@ input[type="checkbox"],
   // Kick in the inline
   @media (min-width: @screen-sm) {
     // Inline-block all the things for "inline"
-    .form-group  {
+    .form-group {
       display: inline-block;
       margin-bottom: 0;
       vertical-align: middle;
@@ -324,6 +329,7 @@ input[type="checkbox"],
       margin-bottom: 0;
       padding-left: 0;
     }
+
     .radio input[type="radio"],
     .checkbox input[type="checkbox"] {
       float: none;
@@ -350,6 +356,7 @@ input[type="checkbox"],
     margin-bottom: 0;
     padding-top: (@padding-base-vertical + 1); // Default padding plus a border
   }
+
   // Account for padding we're adding to ensure the alignment and of help text
   // and other content below items
   .radio,

@@ -60,16 +60,14 @@ define(function (require) {
                 // FIXME 兼容 2.0 但是 roseType 是 area 的时候才是这样？
                 if (roseType !== 'area') {
                     angle = sum === 0 ? unitRadian : (value * unitRadian);
-                }
-                else {
+                } else {
                     angle = PI2 / (data.count() || 1);
                 }
 
                 if (angle < minAngle) {
                     angle = minAngle;
                     restAngle -= minAngle;
-                }
-                else {
+                } else {
                     valueSumLargerThanMinAngle += value;
                 }
 
@@ -102,8 +100,7 @@ define(function (require) {
                         layout.startAngle = startAngle + dir * idx * angle;
                         layout.endAngle = startAngle + dir * (idx + 1) * angle;
                     });
-                }
-                else {
+                } else {
                     unitRadian = restAngle / valueSumLargerThanMinAngle;
                     currentAngle = startAngle;
                     data.each('value', function (value, idx) {

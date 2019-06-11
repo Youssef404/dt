@@ -6,11 +6,11 @@ define(function (require) {
     function getName(obj) {
         if (zrUtil.isObject(obj) && obj.value != null) {
             return obj.value;
-        }
-        else {
+        } else {
             return obj;
         }
     }
+
     /**
      * Get categories
      */

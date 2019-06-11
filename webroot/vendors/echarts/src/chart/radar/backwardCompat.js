@@ -20,8 +20,7 @@ define(function (require) {
                         option.radar = [option.radar];
                     }
                     option.radar.push(polarOpt);
-                }
-                else {
+                } else {
                     polarNotRadar.push(polarOpt);
                 }
             });

@@ -32,8 +32,7 @@ define(function (require) {
 
                 if (values) {
                     values.push(array[i]);
-                }
-                else {
+                } else {
                     valuesByKey[keyValue] = [array[i]];
                 }
             }
@@ -67,8 +66,7 @@ define(function (require) {
                 return array.sort(function (a, b) {
                     return sortKeyFunction(a.key, b.key);
                 });
-            }
-            else {
+            } else {
                 return array;
             }
         }
@@ -102,5 +100,6 @@ define(function (require) {
             }
         };
     }
+
     return nest;
 });

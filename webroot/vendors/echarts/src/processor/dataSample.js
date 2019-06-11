@@ -61,8 +61,7 @@ define(function () {
                     var sampler;
                     if (typeof sampling === 'string') {
                         sampler = samplers[sampling];
-                    }
-                    else if (typeof sampling === 'function') {
+                    } else if (typeof sampling === 'function') {
                         sampler = sampling;
                     }
                     if (sampler) {

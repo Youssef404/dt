@@ -11,16 +11,14 @@ define(function (require) {
                 data.each(coordSys.dimensions, function (x, y, idx) {
                     if (!isNaN(x) && !isNaN(y)) {
                         data.setItemLayout(idx, coordSys.dataToPoint([x, y]));
-                    }
-                    else {
+                    } else {
                         // Also {Array.<number>}, not undefined to avoid if...else... statement
                         data.setItemLayout(idx, [NaN, NaN]);
                     }
                 });
 
                 simpleLayoutEdge(data.graph);
-            }
-            else if (!layout || layout === 'none') {
+            } else if (!layout || layout === 'none') {
                 simpleLayoutHelper(seriesModel);
             }
         });

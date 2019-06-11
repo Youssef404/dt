@@ -15,8 +15,7 @@ define(function (require) {
             if (nodes && edges) {
                 var graph = createGraphFromNodeEdge(nodes, edges, this, true);
                 return graph.data;
-            }
-            else if (nodes && matrix) {
+            } else if (nodes && matrix) {
                 var graph = createGraphFromNodeMatrix(nodes, matrix, this, true);
                 return graph.data;
             }

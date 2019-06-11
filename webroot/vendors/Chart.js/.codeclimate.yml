@@ -3,16 +3,16 @@ engines:
     enabled: true
     config:
       languages:
-      - javascript
+        - javascript
   eslint:
     enabled: true
   fixme:
     enabled: true
 ratings:
   paths:
-  - "src/**/*.js"
+    - "src/**/*.js"
 exclude_paths:
-- dist/**/*
-- node_modules/**/*
-- test/**/*
-- coverage/**/*
+  - dist/**/*
+  - node_modules/**/*
+  - test/**/*
+  - coverage/**/*

@@ -105,8 +105,7 @@ define(function (require) {
                 );
                 // Force to use the value of calculated value.
                 item.value = item.coord[valueCoordIndex];
-            }
-            else {
+            } else {
                 // FIXME Only has one of xAxis and yAxis.
                 item.coord = [
                     item.xAxis != null ? item.xAxis : item.radiusAxis,
@@ -126,8 +125,7 @@ define(function (require) {
             ret.valueAxis = coordSys.getAxis(seriesModel.dataDimToCoordDim(ret.valueDataDim));
             ret.baseAxis = coordSys.getOtherAxis(ret.valueAxis);
             ret.baseDataDim = seriesModel.coordDimToDataDim(ret.baseAxis.dim)[0];
-        }
-        else {
+        } else {
             ret.baseAxis = seriesModel.getBaseAxis();
             ret.valueAxis = coordSys.getOtherAxis(ret.baseAxis);
             ret.baseDataDim = seriesModel.coordDimToDataDim(ret.baseAxis.dim)[0];

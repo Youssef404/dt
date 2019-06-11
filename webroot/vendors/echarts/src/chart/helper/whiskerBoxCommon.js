@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     'use strict';
 
@@ -42,13 +42,11 @@ define(function(require) {
                 option.layout = 'horizontal';
                 categories = xAxisModel.getCategories();
                 addOrdinal = true;
-            }
-            else if (yAxisType  === 'category') {
+            } else if (yAxisType === 'category') {
                 option.layout = 'vertical';
                 categories = yAxisModel.getCategories();
                 addOrdinal = true;
-            }
-            else {
+            } else {
                 option.layout = option.layout || 'horizontal';
             }
 

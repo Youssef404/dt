@@ -98,8 +98,7 @@ define(function (require) {
 
                         if (pointPair && !el) {
                             newEls.push(createEl(pointPair));
-                        }
-                        else if (pointPair) {
+                        } else if (pointPair) {
                             graphic.updateProps(el, {
                                 shape: {
                                     points: pointPair

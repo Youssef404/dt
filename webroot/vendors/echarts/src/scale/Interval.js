@@ -164,8 +164,7 @@ define(function (require) {
                     var expandSize = extent[0] / 2;
                     extent[0] -= expandSize;
                     extent[1] += expandSize;
-                }
-                else {
+                } else {
                     extent[1] = 1;
                 }
             }

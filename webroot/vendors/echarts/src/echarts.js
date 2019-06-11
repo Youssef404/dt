@@ -45,20 +45,23 @@ define(function (require) {
             Eventful.prototype[method].call(this, eventName, handler, context);
         };
     }
+
     /**
      * @module echarts~MessageCenter
      */
     function MessageCenter() {
         Eventful.call(this);
     }
+
     MessageCenter.prototype.on = createRegisterEventWithLowercaseName('on');
     MessageCenter.prototype.off = createRegisterEventWithLowercaseName('off');
     MessageCenter.prototype.one = createRegisterEventWithLowercaseName('one');
     zrUtil.mixin(MessageCenter, Eventful);
+
     /**
      * @module echarts~ECharts
      */
-    function ECharts (dom, theme, opts) {
+    function ECharts(dom, theme, opts) {
         opts = opts || {};
 
         // Get theme by name
@@ -344,8 +347,7 @@ define(function (require) {
             zr.refreshImmediately();
 
             return targetCanvas.toDataURL('image/' + (opts && opts.type || 'png'));
-        }
-        else {
+        } else {
             return this.getDataURL(opts);
         }
     };
@@ -399,8 +401,7 @@ define(function (require) {
                 this._zr.configLayer(0, {
                     clearColor: backgroundColor
                 });
-            }
-            else {
+            } else {
                 // In IE8
                 if (!env.canvasSupported) {
                     var colorArr = colorTool.parse(backgroundColor);
@@ -619,7 +620,7 @@ define(function (require) {
             }
 
             (updateMethod !== 'none' && !isHighlightOrDownplay)
-                && updateMethods[updateMethod].call(this, payload);
+            && updateMethods[updateMethod].call(this, payload);
 
             if (!silent) {
                 // Follow the rule of action batch
@@ -628,8 +629,7 @@ define(function (require) {
                         type: actionInfo.event || payload.type,
                         batch: eventObjBatch
                     };
-                }
-                else {
+                } else {
                     eventObj = eventObjBatch[0];
                 }
                 this._messageCenter.trigger(eventObj.type, eventObj);
@@ -690,8 +690,7 @@ define(function (require) {
                 if (componentType === 'series') {
                     return;
                 }
-            }
-            else {
+            } else {
                 model = componentType;
             }
 
@@ -709,8 +708,7 @@ define(function (require) {
                     viewMap[viewId] = view;
                     viewList.push(view);
                     zr.add(view.group);
-                }
-                else {
+                } else {
                     // Error
                     return;
                 }
@@ -729,8 +727,7 @@ define(function (require) {
                 view.dispose(ecModel, this._api);
                 viewList.splice(i, 1);
                 delete viewMap[view.__id];
-            }
-            else {
+            } else {
                 i++;
             }
         }
@@ -913,6 +910,7 @@ define(function (require) {
             zlevel != null && (el.zlevel = zlevel);
         });
     }
+
     /**
      * @type {Array.<Function>}
      * @inner
@@ -982,12 +980,14 @@ define(function (require) {
         var STATUS_UPDATING = 1;
         var STATUS_UPDATED = 2;
         var STATUS_KEY = '__connectUpdateStatus';
+
         function updateConnectedChartsStatus(charts, status) {
             for (var i = 0; i < charts.length; i++) {
                 var otherChart = charts[i];
                 otherChart[STATUS_KEY] = status;
             }
         }
+
         zrUtil.each(eventActionMap, function (actionType, eventType) {
             chart._messageCenter.on(eventType, function (event) {
                 if (connectedGroups[chart.group] && chart[STATUS_KEY] !== STATUS_PENDING) {
@@ -1011,6 +1011,7 @@ define(function (require) {
         });
 
     }
+
     /**
      * @param {HTMLDomElement} dom
      * @param {Object} [theme]
@@ -1035,7 +1036,7 @@ define(function (require) {
         instances[chart.id] = chart;
 
         dom.setAttribute &&
-            dom.setAttribute(DOM_ATTRIBUTE_KEY, chart.id);
+        dom.setAttribute(DOM_ATTRIBUTE_KEY, chart.id);
 
         enableConnect(chart);
 
@@ -1079,8 +1080,7 @@ define(function (require) {
     echarts.dispose = function (chart) {
         if (zrUtil.isDom(chart)) {
             chart = echarts.getInstanceByDom(chart);
-        }
-        else if (typeof chart === 'string') {
+        } else if (typeof chart === 'string') {
             chart = instances[chart];
         }
         if ((chart instanceof ECharts) && !chart.isDisposed()) {

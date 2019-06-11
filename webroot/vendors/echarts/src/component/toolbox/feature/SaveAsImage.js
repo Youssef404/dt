@@ -2,7 +2,7 @@ define(function (require) {
 
     var env = require('zrender/core/env');
 
-    function SaveAsImage (model) {
+    function SaveAsImage(model) {
         this.model = model;
     }
 

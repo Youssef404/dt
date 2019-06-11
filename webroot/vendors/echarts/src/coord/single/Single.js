@@ -156,7 +156,7 @@ define(function (require) {
 
             var isHorizontal = axis.isHorizontal();
             var extent = isHorizontal ? [0, rect.width] : [0, rect.height];
-            var idx =  axis.reverse ? 1 : 0;
+            var idx = axis.reverse ? 1 : 0;
 
             axis.setExtent(extent[idx], extent[1 - idx]);
 
@@ -221,11 +221,10 @@ define(function (require) {
             var orient = axis.orient;
             if (orient === 'horizontal') {
                 return axis.contain(axis.toLocalCoord(point[0]))
-                && (point[1] >= rect.y && point[1] <= (rect.y + rect.height));
-            }
-            else {
+                    && (point[1] >= rect.y && point[1] <= (rect.y + rect.height));
+            } else {
                 return axis.contain(axis.toLocalCoord(point[1]))
-                && (point[0] >= rect.y && point[0] <= (rect.y + rect.height));
+                    && (point[0] >= rect.y && point[0] <= (rect.y + rect.height));
             }
         },
 
@@ -240,8 +239,7 @@ define(function (require) {
                     axis.coordToData(axis.toLocalCoord(point[0])),
                     point[1]
                 ];
-            }
-            else {
+            } else {
                 return [
                     axis.coordToData(axis.toLocalCoord(point[1])),
                     point[0]

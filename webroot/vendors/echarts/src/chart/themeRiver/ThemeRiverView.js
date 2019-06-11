@@ -34,6 +34,7 @@ define(function (require) {
             function keyGetter(item) {
                 return item.name;
             }
+
             var dataDiffer = new DataDiffer(
                 this._layersSeries || [], layerSeries,
                 keyGetter, keyGetter
@@ -101,8 +102,7 @@ define(function (require) {
                     polygon.setClipPath(createGridClipShape(polygon.getBoundingRect(), seriesModel, function () {
                         polygon.removeClipPath();
                     }));
-                }
-                else {
+                } else {
                     var layerGroup = oldLayersGroups[oldIdx];
                     polygon = layerGroup.childAt(0);
                     text = layerGroup.childAt(1);
@@ -132,7 +132,7 @@ define(function (require) {
                 text.setStyle({
                     text: labelModel.get('show')
                         ? seriesModel.getFormattedLabel(indices[j - 1], 'normal')
-                            || data.getName(indices[j - 1])
+                        || data.getName(indices[j - 1])
                         : '',
                     textFont: textStyleModel.getFont(),
                     textAlign: labelModel.get('textAlign'),

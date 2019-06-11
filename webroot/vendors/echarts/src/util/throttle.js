@@ -50,8 +50,7 @@ define(function () {
 
         if (isSingle) {
             return createCallback();
-        }
-        else {
+        } else {
             var ret = [];
             for (var i = 0; i < fn.length; i++) {
                 ret[i] = createCallback(i);
@@ -78,16 +77,13 @@ define(function () {
                 if (debounce) {
                     if (trailing) {
                         timer = setTimeout(exec, delay);
-                    }
-                    else if (diff >= 0) {
+                    } else if (diff >= 0) {
                         exec();
                     }
-                }
-                else {
+                } else {
                     if (diff >= 0) {
                         exec();
-                    }
-                    else if (trailing) {
+                    } else if (trailing) {
                         timer = setTimeout(exec, -diff);
                     }
                 }
@@ -128,8 +124,8 @@ define(function () {
      */
     lib.debounce = function (fn, delay) {
         return delay != null
-             ? lib.throttle(fn, delay, true, true)
-             : fn;
+            ? lib.throttle(fn, delay, true, true)
+            : fn;
     };
 
 

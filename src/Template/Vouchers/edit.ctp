@@ -12,7 +12,7 @@
                 ['action' => 'delete', $voucher->id],
                 ['confirm' => __('Are you sure you want to delete # {0}?', $voucher->id)]
             )
-        ?></li>
+            ?></li>
         <li><?= $this->Html->link(__('List Vouchers'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Employees'), ['controller' => 'Employees', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Employee'), ['controller' => 'Employees', 'action' => 'add']) ?></li>
@@ -25,9 +25,9 @@
     <fieldset>
         <legend><?= __('Edit Voucher') ?></legend>
         <?php
-            echo $this->Form->control('date', ['empty' => true]);
-            echo $this->Form->control('employee_id', ['options' => $employees, 'empty' => true]);
-            echo $this->Form->control('products._ids', ['options' => $products]);
+        echo $this->Form->control('date', ['empty' => true]);
+        echo $this->Form->control('employee_id', ['options' => $employees, 'empty' => true]);
+        echo $this->Form->control('products._ids', ['options' => $products]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

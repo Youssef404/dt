@@ -36,11 +36,9 @@ define(function (require) {
 
             if (pivotIdx === nth) {
                 return pivotIdx;
-            }
-            else if (pivotIdx < nth) {
+            } else if (pivotIdx < nth) {
                 left = pivotIdx + 1;
-            }
-            else {
+            } else {
                 right = pivotIdx - 1;
             }
         }
@@ -68,8 +66,7 @@ define(function (require) {
             nth = left;
             if (arguments.length == 2) {
                 compareFunc = defaultCompareFunc;
-            }
-            else {
+            } else {
                 compareFunc = right;
             }
             left = 0;

@@ -41,8 +41,7 @@ define(function (require) {
             if (idx === start) {
                 ctx[dir > 0 ? 'moveTo' : 'lineTo'](p[0], p[1]);
                 v2Copy(cp0, p);
-            }
-            else {
+            } else {
                 if (smooth > 0) {
                     var nextIdx = idx + dir;
                     var nextP = points[nextIdx];
@@ -60,8 +59,7 @@ define(function (require) {
                     // Last point
                     if (!nextP || isPointNull(nextP)) {
                         v2Copy(cp1, p);
-                    }
-                    else {
+                    } else {
                         // If next data is null in not connect case
                         if (isPointNull(nextP) && !connectNulls) {
                             nextP = p;
@@ -75,8 +73,7 @@ define(function (require) {
                             var dim = smoothMonotone === 'x' ? 0 : 1;
                             lenPrevSeg = Math.abs(p[dim] - prevP[dim]);
                             lenNextSeg = Math.abs(p[dim] - nextP[dim]);
-                        }
-                        else {
+                        } else {
                             lenPrevSeg = vec2.dist(p, prevP);
                             lenNextSeg = vec2.dist(p, nextP);
                         }
@@ -99,8 +96,7 @@ define(function (require) {
                     );
                     // cp0 of next segment
                     scaleAndAdd(cp0, p, v, smooth * ratioNextSeg);
-                }
-                else {
+                } else {
                     ctx.lineTo(p[0], p[1]);
                 }
             }
@@ -118,10 +114,18 @@ define(function (require) {
         if (smoothConstraint) {
             for (var i = 0; i < points.length; i++) {
                 var pt = points[i];
-                if (pt[0] < ptMin[0]) { ptMin[0] = pt[0]; }
-                if (pt[1] < ptMin[1]) { ptMin[1] = pt[1]; }
-                if (pt[0] > ptMax[0]) { ptMax[0] = pt[0]; }
-                if (pt[1] > ptMax[1]) { ptMax[1] = pt[1]; }
+                if (pt[0] < ptMin[0]) {
+                    ptMin[0] = pt[0];
+                }
+                if (pt[1] < ptMin[1]) {
+                    ptMin[1] = pt[1];
+                }
+                if (pt[0] > ptMax[0]) {
+                    ptMax[0] = pt[0];
+                }
+                if (pt[1] > ptMax[1]) {
+                    ptMax[1] = pt[1];
+                }
             }
         }
         return {

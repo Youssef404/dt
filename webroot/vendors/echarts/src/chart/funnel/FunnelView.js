@@ -26,10 +26,12 @@ define(function (require) {
             labelLine.ignore = labelLine.hoverIgnore;
             text.ignore = text.hoverIgnore;
         }
+
         function onNormal() {
             labelLine.ignore = labelLine.normalIgnore;
             text.ignore = text.normalIgnore;
         }
+
         this.on('emphasis', onEmphasis)
             .on('normal', onNormal)
             .on('mouseover', onEmphasis)
@@ -71,14 +73,13 @@ define(function (require) {
             polygon.setShape({
                 points: layout.points
             });
-            polygon.setStyle({ opacity : 0 });
+            polygon.setStyle({opacity: 0});
             graphic.initProps(polygon, {
                 style: {
                     opacity: opacity
                 }
             }, seriesModel, idx);
-        }
-        else {
+        } else {
             graphic.updateProps(polygon, {
                 style: {
                     opacity: opacity

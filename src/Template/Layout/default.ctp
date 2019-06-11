@@ -27,50 +27,54 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
     <!-- Bootstrap -->
-    <link href="<?=$webroot?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="<?=$webroot?>vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.9.0/js/v4-shims.js"></script>
     <!-- NProgress -->
-    <link href="<?=$webroot?>vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- bootstrap-wysiwyg -->
-    <link href="<?=$webroot?>vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
     <!-- bootstrap-datetimepicker -->
-    <link href="<?=$webroot?>vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-    <link href="<?=$webroot?>vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="<?=$webroot?>vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="<?=$webroot?>vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="<?=$webroot?>vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="<?=$webroot?>vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css"
+          rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css"
+          rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
     <!-- Custom styling plus plugins -->
-    <link href="<?=$webroot?>build/css/custom.css" rel="stylesheet">
+    <link href="<?= $webroot ?>build/css/custom.css" rel="stylesheet">
 </head>
 <body class="nav-md">
 <!-- jQuery -->
-<script src="<?=$webroot?>vendors/jquery/dist/jquery.min.js"></script>
+<script src="<?= $webroot ?>vendors/jquery/dist/jquery.min.js"></script>
 <div class="container body">
     <div class="main_container">
-        <?= $this->element('sidebar')?>
-        <?= $this->element('top_bar')?>
-        <?= $this->element('content')?>
-        <?= $this->element('footer')?>
+        <?= $this->element('sidebar') ?>
+        <?= $this->element('top_bar') ?>
+        <?= $this->element('content') ?>
+        <?= $this->element('footer') ?>
     </div>
 </div>
 
 <!-- Bootstrap -->
-<script src="<?=$webroot?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?= $webroot ?>vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="<?=$webroot?>vendors/fastclick/lib/fastclick.js"></script>
+<script src="<?= $webroot ?>vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="<?=$webroot?>vendors/nprogress/nprogress.js"></script>
+<script src="<?= $webroot ?>vendors/nprogress/nprogress.js"></script>
 <!-- bootstrap-wysiwyg -->
-<script src="<?=$webroot?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-<script src="<?=$webroot?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-<script src="<?=$webroot?>vendors/google-code-prettify/src/prettify.js"></script>
-
+<script src="<?= $webroot ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<script src="<?= $webroot ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="<?= $webroot ?>vendors/google-code-prettify/src/prettify.js"></script>
 
 
 <!-- Custom Theme Scripts -->
-<script src="<?=$webroot?>build/js/custom.min.js"></script>
+<script src="<?= $webroot ?>build/js/custom.min.js"></script>
 </body>
 
 </html>

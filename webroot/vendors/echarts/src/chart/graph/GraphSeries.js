@@ -116,8 +116,7 @@ define(function (require) {
                     html += ' : ' + params.value;
                 }
                 return html;
-            }
-            else { // dataType === 'node' or empty
+            } else { // dataType === 'node' or empty
                 return GraphSeries.superApply(this, 'formatTooltip', arguments);
             }
         },
@@ -152,7 +151,7 @@ define(function (require) {
             z: 2,
 
             color: ['#61a0a8', '#d14a61', '#fd9c35', '#675bba', '#fec42c',
-                    '#dd4444', '#fd9c35', '#cd4870'],
+                '#dd4444', '#fd9c35', '#cd4870'],
 
             coordinateSystem: 'view',
 

@@ -2,7 +2,7 @@
  * Parallel Coordinates
  * <https://en.wikipedia.org/wiki/Parallel_coordinates>
  */
-define(function(require) {
+define(function (require) {
 
     var layout = require('../../util/layout');
     var axisHelper = require('../../coord/axisHelper');
@@ -255,8 +255,7 @@ define(function(require) {
 
                 if (!hasActiveSet) {
                     activeState = 'normal';
-                }
-                else {
+                } else {
                     activeState = 'active';
                     for (var j = 0, lenj = dimensions.length; j < lenj; j++) {
                         var dimName = dimensions[j];

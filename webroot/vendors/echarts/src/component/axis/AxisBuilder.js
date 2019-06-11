@@ -161,7 +161,7 @@ define(function (require) {
             for (var i = 0; i < ticksCoords.length; i++) {
                 // Only ordinal scale support tick interval
                 if (ifIgnoreOnTick(axis, i, tickInterval)) {
-                     continue;
+                    continue;
                 }
 
                 var tickCoord = ticksCoords[i];
@@ -223,7 +223,7 @@ define(function (require) {
             var isSilent = axisModel.get('silent');
             for (var i = 0; i < ticks.length; i++) {
                 if (ifIgnoreOnTick(axis, i, opt.labelInterval)) {
-                     continue;
+                    continue;
                 }
 
                 var itemTextStyleModel = textStyleModel;
@@ -272,6 +272,7 @@ define(function (require) {
                     return firstRect.intersect(nextRect);
                 }
             }
+
             if (axis.type !== 'category') {
                 // If min or max are user set, we need to check
                 // If the tick on min(max) are overlap on their neighbour tick
@@ -331,8 +332,7 @@ define(function (require) {
 
             if (nameLocation === 'middle') {
                 labelLayout = innerTextLayout(opt, opt.rotation, nameDirection);
-            }
-            else {
+            } else {
                 labelLayout = endTextLayout(opt, nameLocation, extent);
             }
 
@@ -371,18 +371,15 @@ define(function (require) {
         if (isRadianAroundZero(rotationDiff)) { // Label is parallel with axis line.
             verticalAlign = direction > 0 ? 'top' : 'bottom';
             textAlign = 'center';
-        }
-        else if (isRadianAroundZero(rotationDiff - PI)) { // Label is inverse parallel with axis line.
+        } else if (isRadianAroundZero(rotationDiff - PI)) { // Label is inverse parallel with axis line.
             verticalAlign = direction > 0 ? 'bottom' : 'top';
             textAlign = 'center';
-        }
-        else {
+        } else {
             verticalAlign = 'middle';
 
             if (rotationDiff > 0 && rotationDiff < PI) {
                 textAlign = direction > 0 ? 'right' : 'left';
-            }
-            else {
+            } else {
                 textAlign = direction > 0 ? 'left' : 'right';
             }
         }
@@ -408,17 +405,14 @@ define(function (require) {
         if (isRadianAroundZero(rotationDiff - PI / 2)) {
             verticalAlign = onLeft ? 'bottom' : 'top';
             textAlign = 'center';
-        }
-        else if (isRadianAroundZero(rotationDiff - PI * 1.5)) {
+        } else if (isRadianAroundZero(rotationDiff - PI * 1.5)) {
             verticalAlign = onLeft ? 'top' : 'bottom';
             textAlign = 'center';
-        }
-        else {
+        } else {
             verticalAlign = 'middle';
             if (rotationDiff < PI * 1.5 && rotationDiff > PI / 2) {
                 textAlign = onLeft ? 'left' : 'right';
-            }
-            else {
+            } else {
                 textAlign = onLeft ? 'right' : 'left';
             }
         }
@@ -441,7 +435,7 @@ define(function (require) {
                 typeof interval === 'function'
                     ? (
                         rawTick = scale.getTicks()[i],
-                        !interval(rawTick, scale.getLabel(rawTick))
+                            !interval(rawTick, scale.getLabel(rawTick))
                     )
                     : i % (interval + 1)
             );

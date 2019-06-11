@@ -1,4 +1,3 @@
-
 define(function (require) {
 
     var SymbolDraw = require('../helper/SymbolDraw');
@@ -51,8 +50,7 @@ define(function (require) {
                 };
                 if (this._firstRender) {
                     group.attr(groupNewProp);
-                }
-                else {
+                } else {
                     graphic.updateProps(group, groupNewProp, seriesModel);
                 }
             }
@@ -84,7 +82,7 @@ define(function (require) {
                         if (forceLayout) {
                             forceLayout.warmUp();
                             !this._layouting
-                                && this._startForceLayoutIteration(forceLayout, layoutAnimation);
+                            && this._startForceLayoutIteration(forceLayout, layoutAnimation);
                             forceLayout.setFixed(idx);
                             // Write position back to layout
                             data.setItemLayout(idx, el.position);
@@ -94,8 +92,7 @@ define(function (require) {
                             forceLayout.setUnfixed(idx);
                         }
                     }, this);
-                }
-                else {
+                } else {
                     el.off('drag');
                 }
                 el.setDraggable(draggable && forceLayout);
@@ -150,7 +147,7 @@ define(function (require) {
                     api.dispatchAction({
                         seriesId: seriesModel.id,
                         type: 'graphRoam',
-                        zoom:  zoom,
+                        zoom: zoom,
                         originX: mouseX,
                         originY: mouseY
                     });

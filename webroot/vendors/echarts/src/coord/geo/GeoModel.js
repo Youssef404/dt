@@ -127,8 +127,7 @@ define(function (require) {
             if (typeof formatter === 'function') {
                 params.status = status;
                 return formatter(params);
-            }
-            else if (typeof formatter === 'string') {
+            } else if (typeof formatter === 'string') {
                 return formatter.replace('{a}', params.seriesName);
             }
         },

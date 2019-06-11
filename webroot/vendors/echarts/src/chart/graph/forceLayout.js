@@ -24,11 +24,9 @@ define(function (require) {
                         var id = nodeData.getId(idx);
                         nodeData.setItemLayout(idx, preservedPoints[id] || [NaN, NaN]);
                     });
-                }
-                else if (!initLayout || initLayout === 'none') {
+                } else if (!initLayout || initLayout === 'none') {
                     simpleLayoutHelper(graphSeries);
-                }
-                else if (initLayout === 'circular') {
+                } else if (initLayout === 'circular') {
                     circularLayoutHelper(graphSeries);
                 }
 
@@ -101,8 +99,7 @@ define(function (require) {
 
                 // Step to get the layout
                 forceInstance.step();
-            }
-            else {
+            } else {
                 // Remove prev injected forceLayout instance
                 graphSeries.forceLayout = null;
             }

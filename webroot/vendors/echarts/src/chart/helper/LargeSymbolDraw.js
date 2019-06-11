@@ -27,8 +27,7 @@ define(function (require) {
                         pt[0] - size[0] / 2, pt[1] - size[1] / 2,
                         size[0], size[1]
                     );
-                }
-                else {
+                } else {
                     symbolProxyShape.x = pt[0] - size[0] / 2;
                     symbolProxyShape.y = pt[1] - size[1] / 2;
                     symbolProxyShape.width = size[0];

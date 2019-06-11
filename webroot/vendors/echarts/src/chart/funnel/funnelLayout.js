@@ -29,7 +29,7 @@ define(function (require) {
         return indices;
     }
 
-    function labelLayout (data) {
+    function labelLayout(data) {
         data.each(function (idx) {
             var itemModel = data.getItemModel(idx);
             var labelModel = itemModel.getModel('label.normal');
@@ -55,8 +55,7 @@ define(function (require) {
                 linePoints = [
                     [textX, textY], [textX, textY]
                 ];
-            }
-            else {
+            } else {
                 var x1;
                 var y1;
                 var x2;
@@ -68,8 +67,7 @@ define(function (require) {
                     x2 = x1 - labelLineLen;
                     textX = x2 - 5;
                     textAlign = 'right';
-                }
-                else {
+                } else {
                     // Right side
                     x1 = (points[1][0] + points[2][0]) / 2;
                     y1 = (points[1][1] + points[2][1]) / 2;

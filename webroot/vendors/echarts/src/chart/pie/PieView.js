@@ -84,10 +84,12 @@ define(function (require) {
             polyline.ignore = polyline.hoverIgnore;
             text.ignore = text.hoverIgnore;
         }
+
         function onNormal() {
             polyline.ignore = polyline.normalIgnore;
             text.ignore = text.normalIgnore;
         }
+
         this.on('emphasis', onEmphasis)
             .on('normal', onNormal)
             .on('mouseover', onEmphasis)
@@ -127,8 +129,7 @@ define(function (require) {
                     endAngle: layout.endAngle
                 }
             }, seriesModel, idx);
-        }
-        else {
+        } else {
             graphic.updateProps(sector, {
                 shape: sectorShape
             }, seriesModel, idx);
@@ -167,6 +168,7 @@ define(function (require) {
                 }
             }, 300, 'elasticOut');
         }
+
         function onNormal() {
             sector.stopAnimation(true);
             sector.animateTo({
@@ -175,6 +177,7 @@ define(function (require) {
                 }
             }, 300, 'elasticOut');
         }
+
         sector.off('mouseover').off('mouseout').off('emphasis').off('normal');
         if (itemModel.get('hoverAnimation')) {
             sector

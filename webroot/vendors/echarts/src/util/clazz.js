@@ -83,8 +83,7 @@ define(function (require) {
                         throw new Error(componentType.main + 'exists.');
                     }
                     storage[componentType.main] = Clazz;
-                }
-                else if (componentType.sub !== IS_CONTAINER) {
+                } else if (componentType.sub !== IS_CONTAINER) {
                     var container = makeContainer(componentType);
                     container[componentType.sub] = Clazz;
                 }
@@ -118,8 +117,7 @@ define(function (require) {
                 zrUtil.each(obj, function (o, type) {
                     type !== IS_CONTAINER && result.push(o);
                 });
-            }
-            else {
+            } else {
                 result.push(obj);
             }
 

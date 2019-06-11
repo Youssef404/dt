@@ -48,8 +48,7 @@ define(function (require) {
                     if (gridIndex != null) {
                         var coordModel = ecModel.getComponent('grid', gridIndex);
                         save(coordModel, axisModel, cartesians, gridIndex);
-                    }
-                    else if (polarIndex != null) {
+                    } else if (polarIndex != null) {
                         var coordModel = ecModel.getComponent('polar', polarIndex);
                         save(coordModel, axisModel, polars, polarIndex);
                     }

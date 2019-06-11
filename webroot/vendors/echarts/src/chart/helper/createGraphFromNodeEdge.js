@@ -34,8 +34,7 @@ define(function (require) {
         var nodeData;
         if (coordSys === 'cartesian2d' || coordSys === 'polar') {
             nodeData = createListFromArray(nodes, hostModel, hostModel.ecModel);
-        }
-        else {
+        } else {
             // FIXME
             var coordSysCtor = CoordinateSystem.get(coordSys);
             // FIXME

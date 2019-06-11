@@ -36,14 +36,11 @@ define(function (require) {
             var result;
             if (statisticsType === 'min') {
                 result = min;
-            }
-            else if (statisticsType === 'max') {
+            } else if (statisticsType === 'max') {
                 result = max;
-            }
-            else if (statisticsType === 'average') {
+            } else if (statisticsType === 'average') {
                 result = sum / len;
-            }
-            else {
+            } else {
                 result = sum;
             }
             return len === 0 ? NaN : result;

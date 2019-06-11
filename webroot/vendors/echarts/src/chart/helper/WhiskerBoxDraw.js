@@ -179,8 +179,7 @@ define(function (require) {
 
                 if (!symbolEl) {
                     symbolEl = new WhiskerBox(data, newIdx, styleUpdater);
-                }
-                else {
+                } else {
                     symbolEl.updateData(data, newIdx);
                 }
 

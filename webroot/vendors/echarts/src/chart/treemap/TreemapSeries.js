@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     var SeriesModel = require('../../model/Series');
     var Tree = require('../../data/Tree');
@@ -96,9 +96,7 @@ define(function(require) {
                                                 // border color is evaluated by color of current node and
                                                 // borderColorSaturation.
                 },
-                emphasis: {
-
-                }
+                emphasis: {}
             },
             color: 'none',              // Array. Specify color list of each level.
                                         // level[0].color would be global color list.
@@ -297,8 +295,7 @@ define(function(require) {
         if (arrValueLength >= 0) {
             if (!zrUtil.isArray(thisValue)) {
                 dataNode.value = new Array(arrValueLength);
-            }
-            else {
+            } else {
                 thisValue = thisValue[0];
             }
         }

@@ -67,8 +67,7 @@ define(function (require) {
         var bandWidth;
         if (baseAxis.type === 'category') {
             bandWidth = baseAxis.getBandWidth();
-        }
-        else {
+        } else {
             var maxDataCount = 0;
             each(seriesModels, function (seriesModel) {
                 maxDataCount = Math.max(maxDataCount, seriesModel.getData().count());
@@ -151,8 +150,7 @@ define(function (require) {
                 var point;
                 if (isNaN(axisDimVal) || isNaN(val)) {
                     point = [NaN, NaN];
-                }
-                else {
+                } else {
                     point = coordSys.dataToPoint(p);
                     point[variableDim] += offset;
                 }

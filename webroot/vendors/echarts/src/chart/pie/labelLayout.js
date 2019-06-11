@@ -57,9 +57,9 @@ define(function (require) {
                 var length2 = list[i].len2;
                 var deltaX = (deltaY < r + length)
                     ? Math.sqrt(
-                          (r + length + length2) * (r + length + length2)
-                          - deltaY * deltaY
-                      )
+                        (r + length + length2) * (r + length + length2)
+                        - deltaY * deltaY
+                    )
                     : Math.abs(list[i].x - cx);
                 if (isDownList && deltaX >= lastDeltaX) {
                     // 右下，左下
@@ -93,8 +93,7 @@ define(function (require) {
         for (var i = 0; i < len; i++) {
             if (list[i].y >= cy) {
                 downList.push(list[i]);
-            }
-            else {
+            } else {
                 upList.push(list[i]);
             }
         }
@@ -108,8 +107,7 @@ define(function (require) {
         for (var i = 0; i < labelLayoutList.length; i++) {
             if (labelLayoutList[i].x < cx) {
                 leftList.push(labelLayoutList[i]);
-            }
-            else {
+            } else {
                 rightList.push(labelLayoutList[i]);
             }
         }
@@ -123,8 +121,7 @@ define(function (require) {
                 var dist = linePoints[1][0] - linePoints[2][0];
                 if (labelLayoutList[i].x < cx) {
                     linePoints[2][0] = labelLayoutList[i].x + 3;
-                }
-                else {
+                } else {
                     linePoints[2][0] = labelLayoutList[i].x - 3;
                 }
                 linePoints[1][1] = linePoints[2][1] = labelLayoutList[i].y;
@@ -169,8 +166,7 @@ define(function (require) {
                 textX = layout.cx;
                 textY = layout.cy;
                 textAlign = 'center';
-            }
-            else {
+            } else {
                 var x1 = (isLabelInside ? (layout.r + layout.r0) / 2 * dx : layout.r * dx) + cx;
                 var y1 = (isLabelInside ? (layout.r + layout.r0) / 2 * dy : layout.r * dy) + cy;
 
@@ -196,7 +192,7 @@ define(function (require) {
             var labelRotate = labelModel.get('rotate')
                 ? (dx < 0 ? -midAngle + Math.PI : -midAngle) : 0;
             var text = seriesModel.getFormattedLabel(idx, 'normal')
-                        || data.getName(idx);
+                || data.getName(idx);
             var textRect = textContain.getBoundingRect(
                 text, font, textAlign, 'top'
             );

@@ -28,8 +28,7 @@ define(function (require) {
                         coordinate,
                         encodeOffsets[c]
                     );
-                }
-                else if (geometry.type === 'MultiPolygon') {
+                } else if (geometry.type === 'MultiPolygon') {
                     for (var c2 = 0; c2 < coordinate.length; c2++) {
                         var polygon = coordinate[c2];
                         coordinate[c2] = decodePolygon(

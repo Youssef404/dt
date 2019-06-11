@@ -78,8 +78,7 @@ define(function (require) {
             // https://jsperf.com/try-catch-performance-overhead
             try {
                 this.regions = geoJson ? parseGeoJson(geoJson) : [];
-            }
-            catch (e) {
+            } catch (e) {
                 throw 'Invalid geoJson format\n' + e;
             }
             specialAreas = specialAreas || {};

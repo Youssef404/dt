@@ -1,7 +1,7 @@
 /**
  * @file Axis operator
  */
-define(function(require) {
+define(function (require) {
 
     var zrUtil = require('zrender/core/util');
     var numberUtil = require('../../util/number');
@@ -128,8 +128,7 @@ define(function(require) {
             if (isCartesian) {
                 coordSysIndexName = 'gridIndex';
                 otherAxisDim = axisDim === 'x' ? 'y' : 'x';
-            }
-            else {
+            } else {
                 coordSysIndexName = 'polarIndex';
                 otherAxisDim = axisDim === 'angle' ? 'radius' : 'angle';
             }
@@ -222,8 +221,7 @@ define(function(require) {
                                 return !isInWindow(value) ? NaN : value;
                             })
                         );
-                    }
-                    else {
+                    } else {
                         seriesData.filterSelf(dim, isInWindow);
                     }
                 });
@@ -293,8 +291,7 @@ define(function(require) {
                 boundValue = scale.parse(numberUtil.linearMap(
                     boundPercent, percentExtent, dataExtent, true
                 ));
-            }
-            else { // boundPercent == null && boundValue != null
+            } else { // boundPercent == null && boundValue != null
                 boundPercent = numberUtil.linearMap(
                     boundValue, dataExtent, percentExtent, true
                 );

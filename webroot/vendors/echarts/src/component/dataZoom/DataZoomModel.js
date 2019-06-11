@@ -1,7 +1,7 @@
 /**
  * @file Data zoom model
  */
-define(function(require) {
+define(function (require) {
 
     var zrUtil = require('zrender/core/util');
     var env = require('zrender/core/env');
@@ -156,8 +156,7 @@ define(function(require) {
 
             if (autoMode === 'axisIndex') {
                 this._autoSetAxisIndex();
-            }
-            else if (autoMode === 'orient') {
+            } else if (autoMode === 'orient') {
                 this._autoSetOrient();
             }
         },
@@ -185,8 +184,7 @@ define(function(require) {
 
             if (orient == null && hasIndexSpecified) {
                 return 'orient';
-            }
-            else if (!hasIndexSpecified) {
+            } else if (!hasIndexSpecified) {
                 if (orient == null) {
                     thisOption.orient = 'horizontal';
                 }
@@ -374,8 +372,7 @@ define(function(require) {
                 if (axisProxy) {
                     return axisProxy.getDataValueWindow();
                 }
-            }
-            else {
+            } else {
                 return this.getAxisProxy(axisDimName, axisIndex).getDataValueWindow();
             }
         },

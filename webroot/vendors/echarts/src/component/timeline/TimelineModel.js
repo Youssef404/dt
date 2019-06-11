@@ -1,7 +1,7 @@
 /**
  * @file Timeline model
  */
-define(function(require) {
+define(function (require) {
 
     var ComponentModel = require('../../model/Component');
     var List = require('../../data/List');
@@ -99,8 +99,7 @@ define(function(require) {
 
             if (this.option.loop) {
                 currentIndex = (currentIndex % count + count) % count;
-            }
-            else {
+            } else {
                 currentIndex >= count && (currentIndex = count - 1);
                 currentIndex < 0 && (currentIndex = 0);
             }
@@ -154,8 +153,7 @@ define(function(require) {
                     if (zrUtil.isObject(item)) {
                         newItem = zrUtil.clone(item);
                         newItem.value = index;
-                    }
-                    else {
+                    } else {
                         newItem = index;
                     }
 

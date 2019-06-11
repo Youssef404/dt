@@ -77,8 +77,7 @@ define(function (require) {
             var coordSys = seriesModel.coordinateSystem;
             if (coordSys.type === 'cartesian2d') {
                 this._renderOnCartesian(coordSys, seriesModel, api);
-            }
-            else if (isGeoCoordSys(coordSys)) {
+            } else if (isGeoCoordSys(coordSys)) {
                 this._renderOnGeo(
                     coordSys, seriesModel, visualMapOfThisSeries, api
                 );

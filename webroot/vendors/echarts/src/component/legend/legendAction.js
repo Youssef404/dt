@@ -1,7 +1,7 @@
 /**
  * @file Legend action
  */
-define(function(require) {
+define(function (require) {
 
     var echarts = require('../../echarts');
     var zrUtil = require('zrender/core/util');
@@ -18,8 +18,7 @@ define(function(require) {
                 // In the case one legend has some item unSelected in option. And if other legend
                 // doesn't has the item, they will assume it is selected.
                 legendModel[isSelected ? 'select' : 'unSelect'](payload.name);
-            }
-            else {
+            } else {
                 legendModel[methodName](payload.name);
                 isSelected = legendModel.isSelected(payload.name);
             }
@@ -34,8 +33,7 @@ define(function(require) {
                 if (name in selectedMap) {
                     // Unselected if any legend is unselected
                     selectedMap[name] = selectedMap[name] && isItemSelected;
-                }
-                else {
+                } else {
                     selectedMap[name] = isItemSelected;
                 }
             });
@@ -46,6 +44,7 @@ define(function(require) {
             selected: selectedMap
         };
     }
+
     /**
      * @event legendToggleSelect
      * @type {Object}

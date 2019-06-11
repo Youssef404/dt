@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
     'use strict';
 
     var zrUtil = require('zrender/core/util');
@@ -101,8 +101,7 @@ define(function(require) {
                 this._createController(
                     controllerGroup, featureModel, ecModel, api
                 );
-            }
-            else {
+            } else {
                 zr.setDefaultCursorStyle('default');
                 this._disposeController();
             }

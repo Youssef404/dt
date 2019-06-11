@@ -166,8 +166,7 @@ define(function (require) {
             ret.pixelLength = rect.width;
             ret.pixelStart = rect.x;
             ret.signal = axis.inverse ? 1 : -1;
-        }
-        else { // axis.dim === 'y'
+        } else { // axis.dim === 'y'
             ret.pixel = xy[1];
             ret.pixelLength = rect.height;
             ret.pixelStart = rect.y;

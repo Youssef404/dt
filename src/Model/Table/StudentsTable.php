@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -62,7 +63,7 @@ class StudentsTable extends Table
             ->scalar('first_name')
             ->maxLength('first_name', 255)
             ->requirePresence('first_name', 'create')
-            ->allowEmptyString('first_name', false,'Ce champ ne peut pas etre vide !!!');
+            ->allowEmptyString('first_name', false, 'Ce champ ne peut pas etre vide !!!');
 
         $validator
             ->scalar('last_name')

@@ -66,7 +66,7 @@ define(function (require) {
         axis = (axis + 1) % this.dimension;
         if (right > left) {
             node.left = this._buildTree(points, left, medianIndex - 1, axis);
-            node.right = this._buildTree(points, medianIndex + 1, right, axis);   
+            node.right = this._buildTree(points, medianIndex + 1, right, axis);
         }
 
         return node;
@@ -93,8 +93,7 @@ define(function (require) {
             // Left first
             curr.right && (stack[idx++] = curr.right);
             curr.left && (stack[idx++] = curr.left);
-        }
-        else {
+        } else {
             // Right first
             curr.left && (stack[idx++] = curr.left);
             curr.right && (stack[idx++] = curr.right);
@@ -121,8 +120,7 @@ define(function (require) {
                 }
                 // Search in the left area
                 curr.left && (stack[idx++] = curr.left);
-            }
-            else {
+            } else {
                 if (needsCheckOtherSide) {
                     curr.left && (stack[idx++] = curr.left);
                 }
@@ -140,10 +138,9 @@ define(function (require) {
         // Insert to the right position
         // Sort from small to large
         for (var i = found - 1; i > 0; i--) {
-            if (dist >= nearestNList[i - 1].dist) {                
+            if (dist >= nearestNList[i - 1].dist) {
                 break;
-            }
-            else {
+            } else {
                 nearestNList[i].dist = nearestNList[i - 1].dist;
                 nearestNList[i].node = nearestNList[i - 1].node;
             }
@@ -191,8 +188,7 @@ define(function (require) {
             // Left first
             curr.right && (stack[idx++] = curr.right);
             curr.left && (stack[idx++] = curr.left);
-        }
-        else {
+        } else {
             // Right first
             curr.left && (stack[idx++] = curr.left);
             curr.right && (stack[idx++] = curr.right);
@@ -224,8 +220,7 @@ define(function (require) {
                 }
                 // Search in the left area
                 curr.left && (stack[idx++] = curr.left);
-            }
-            else {
+            } else {
                 if (needsCheckOtherSide) {
                     curr.left && (stack[idx++] = curr.left);
                 }

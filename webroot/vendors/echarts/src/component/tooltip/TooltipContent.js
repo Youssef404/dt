@@ -23,7 +23,7 @@ define(function (require) {
     function assembleTransition(duration) {
         var transitionCurve = 'cubic-bezier(0.23, 1, 0.32, 1)';
         var transitionText = 'left ' + duration + 's ' + transitionCurve + ','
-                            + 'top ' + duration + 's ' + transitionCurve;
+            + 'top ' + duration + 's ' + transitionCurve;
         return zrUtil.map(vendors, function (vendorPrefix) {
             return vendorPrefix + 'transition:' + transitionText;
         }).join(';');
@@ -45,7 +45,7 @@ define(function (require) {
         cssText.push('font:' + textStyleModel.getFont());
 
         fontSize &&
-            cssText.push('line-height:' + Math.round(fontSize * 3 / 2) + 'px');
+        cssText.push('line-height:' + Math.round(fontSize * 3 / 2) + 'px');
 
         each(['decoration', 'align'], function (name) {
             var val = textStyleModel.get(name);
@@ -73,13 +73,12 @@ define(function (require) {
 
         // Animation transition
         transitionDuration &&
-            cssText.push(assembleTransition(transitionDuration));
+        cssText.push(assembleTransition(transitionDuration));
 
         if (backgroundColor) {
             if (env.canvasSupported) {
                 cssText.push('background-Color:' + backgroundColor);
-            }
-            else {
+            } else {
                 // for ie
                 cssText.push(
                     'background-Color:#' + zrColor.toHex(backgroundColor)
@@ -94,7 +93,7 @@ define(function (require) {
             var camelCase = toCamelCase(borderName);
             var val = tooltipModel.get(camelCase);
             val != null &&
-                cssText.push(borderName + ':' + val + (name === 'color' ? '' : 'px'));
+            cssText.push(borderName + ':' + val + (name === 'color' ? '' : 'px'));
         });
 
         // Text style
@@ -249,8 +248,7 @@ define(function (require) {
                     // Set show false to avoid invoke hideLater mutiple times
                     this._show = false;
                     this._hideTimeout = setTimeout(zrUtil.bind(this.hide, this), time);
-                }
-                else {
+                } else {
                     this.hide();
                 }
             }

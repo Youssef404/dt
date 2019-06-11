@@ -11,7 +11,7 @@
 
 
             <!-- Smart Wizard -->
-            <?= $this->Form->create($student,['type'=>'file']) ?>
+            <?= $this->Form->create($student, ['type' => 'file']) ?>
             <div id="wizard" class="form_wizard wizard_horizontal">
                 <ul class="wizard_steps">
                     <li>
@@ -69,7 +69,7 @@
                         <div class="form-group">
                             <?= $this->Form->label('photo', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?= $this->Form->control('photo', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false,'type'=>'file']); ?>
+                                <?= $this->Form->control('photo', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false, 'type' => 'file']); ?>
                             </div>
                         </div>
 
@@ -82,30 +82,30 @@
 
                     <div class="form-horizontal form-label-left">
                         <div class="form-group">
-                            <?=$this->Form->label('tutor_first_name',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
+                            <?= $this->Form->label('tutor_first_name', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?=$this->Form->control('tutor_first_name',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
+                                <?= $this->Form->control('tutor_first_name', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
                             </div>
 
                         </div>
                         <div class="form-group">
-                            <?=$this->Form->label('tutor_last_name',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
+                            <?= $this->Form->label('tutor_last_name', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?=$this->Form->control('tutor_last_name',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
+                                <?= $this->Form->control('tutor_last_name', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
                             </div>
 
                         </div>
                         <div class="form-group">
-                            <?=$this->Form->label('tutor_job',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
+                            <?= $this->Form->label('tutor_job', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?=$this->Form->control('tutor_job',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
+                                <?= $this->Form->control('tutor_job', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
                             </div>
 
                         </div>
                         <div class="form-group">
-                            <?=$this->Form->label('tutor_phone_number',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
+                            <?= $this->Form->label('tutor_phone_number', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <?=$this->Form->control('tutor_phone_number',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
+                                <?= $this->Form->control('tutor_phone_number', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
                             </div>
 
                         </div>
@@ -113,39 +113,38 @@
                 </div>
 
 
+                <div id="step-3">
 
-            <div id="step-3">
 
+                    <div class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            <?= $this->Form->label('establishment_id', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <?= $this->Form->control('establishment_id', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
+                            </div>
 
-                <div class="form-horizontal form-label-left">
-                    <div class="form-group">
-                        <?=$this->Form->label('establishment_id',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <?=$this->Form->control('establishment_id',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
                         </div>
+                        <div class="form-group">
+                            <?= $this->Form->label('scolarship', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <?= $this->Form->control('scolarship', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
+                            </div>
 
-                    </div>
-                    <div class="form-group">
-                        <?=$this->Form->label('scolarship',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <?=$this->Form->control('scolarship',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
                         </div>
+                        <div class="form-group">
+                            <?= $this->Form->label('level', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <?= $this->Form->control('level', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
+                            </div>
 
-                    </div>
-                    <div class="form-group">
-                        <?=$this->Form->label('level',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <?=$this->Form->control('level',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
                         </div>
+                        <div class="form-group">
+                            <?= $this->Form->label('major_id', null, ['class' => 'control-label col-md-3 col-sm-3 col-xs-12']) ?>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <?= $this->Form->control('major_id', ['class' => 'form-control col-md-7 col-xs-12', 'label' => false]); ?>
+                            </div>
 
-                    </div>
-                    <div class="form-group">
-                        <?=$this->Form->label('major_id',null,['class'=>'control-label col-md-3 col-sm-3 col-xs-12'])?>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <?=$this->Form->control('major_id',['class'=>'form-control col-md-7 col-xs-12','label'=>false]);?>
                         </div>
-
-                    </div>
                     </div>
                 </div>
 
@@ -159,7 +158,6 @@
     </div>
 </div>
 </div>
-
 
 
 <!-- NProgress -->

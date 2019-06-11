@@ -158,8 +158,7 @@ define(function (require) {
                     coords.push(bands[i - 1][1]);
                 }
                 return coords;
-            }
-            else {
+            } else {
                 return zrUtil.map(this.scale.getTicks(), this.dataToCoord, this);
             }
         },
@@ -178,8 +177,7 @@ define(function (require) {
                     coords.push((band[0] + band[1]) / 2);
                 }
                 return coords;
-            }
-            else {
+            } else {
                 return zrUtil.map(this.scale.getTicks(), this.dataToCoord, this);
             }
         },
@@ -192,7 +190,7 @@ define(function (require) {
          *
          * @return {Array}
          */
-         // FIXME Situation when labels is on ticks
+        // FIXME Situation when labels is on ticks
         getBands: function () {
             var extent = this.getExtent();
             var bands = [];

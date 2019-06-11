@@ -78,8 +78,7 @@ define(function (require) {
 
                 if (!this.option || type === 'recreate') {
                     initBase.call(this, baseOption);
-                }
-                else {
+                } else {
                     this.restoreData();
                     this.mergeOption(baseOption);
                 }
@@ -125,8 +124,7 @@ define(function (require) {
                     option[mainType] = option[mainType] == null
                         ? zrUtil.clone(componentOption)
                         : zrUtil.merge(option[mainType], componentOption, true);
-                }
-                else {
+                } else {
                     newCptTypes.push(mainType);
                 }
             });
@@ -167,8 +165,7 @@ define(function (require) {
                     if (!newCptOption) {
                         componentModel.mergeOption({}, this);
                         componentModel.optionUpdated(this);
-                    }
-                    else {
+                    } else {
                         var ComponentModelClass = ComponentModel.getClass(
                             mainType, resultItem.keyInfo.subType, true
                         );
@@ -176,8 +173,7 @@ define(function (require) {
                         if (componentModel && componentModel instanceof ComponentModelClass) {
                             componentModel.mergeOption(newCptOption, this);
                             componentModel.optionUpdated(this);
-                        }
-                        else {
+                        } else {
                             // PENDING Global as parent ?
                             componentModel = new ComponentModelClass(
                                 newCptOption, this, this,
@@ -286,15 +282,13 @@ define(function (require) {
                 }), function (val) {
                     return !!val;
                 });
-            }
-            else if (id != null) {
+            } else if (id != null) {
                 var isIdArray = isArray(id);
                 result = filter(cpts, function (cpt) {
                     return (isIdArray && indexOf(id, cpt.id) >= 0)
                         || (!isIdArray && cpt.id === id);
                 });
-            }
-            else if (name != null) {
+            } else if (name != null) {
                 var isNameArray = isArray(name);
                 result = filter(cpts, function (cpt) {
                     return (isNameArray && indexOf(name, cpt.name) >= 0)
@@ -349,10 +343,10 @@ define(function (require) {
                 var idAttr = mainType + 'Id';
                 var nameAttr = mainType + 'Name';
                 return q && (
-                        q.hasOwnProperty(indexAttr)
-                        || q.hasOwnProperty(idAttr)
-                        || q.hasOwnProperty(nameAttr)
-                    )
+                    q.hasOwnProperty(indexAttr)
+                    || q.hasOwnProperty(idAttr)
+                    || q.hasOwnProperty(nameAttr)
+                )
                     ? {
                         mainType: mainType,
                         // subType will be filtered finally.
@@ -365,8 +359,8 @@ define(function (require) {
 
             function doFilter(res) {
                 return condition.filter
-                     ? filter(res, condition.filter)
-                     : res;
+                    ? filter(res, condition.filter)
+                    : res;
             }
         },
 
@@ -404,11 +398,9 @@ define(function (require) {
                         cb.call(context, componentType, component, index);
                     });
                 });
-            }
-            else if (zrUtil.isString(mainType)) {
+            } else if (zrUtil.isString(mainType)) {
                 each(componentsMap[mainType], cb, context);
-            }
-            else if (isObject(mainType)) {
+            } else if (isObject(mainType)) {
                 var queryResult = this.findComponents(mainType);
                 each(queryResult, cb, context);
             }
@@ -559,8 +551,7 @@ define(function (require) {
                     option[name] = !option[name]
                         ? zrUtil.clone(theme[name])
                         : zrUtil.merge(option[name], theme[name], false);
-                }
-                else {
+                } else {
                     if (option[name] == null) {
                         option[name] = theme[name];
                     }
@@ -674,16 +665,14 @@ define(function (require) {
             keyInfo.name = opt.name != null
                 ? opt.name + ''
                 : existCpt
-                ? existCpt.name
-                : '\0-';
+                    ? existCpt.name
+                    : '\0-';
 
             if (existCpt) {
                 keyInfo.id = existCpt.id;
-            }
-            else if (opt.id != null) {
+            } else if (opt.id != null) {
                 keyInfo.id = opt.id + '';
-            }
-            else {
+            } else {
                 // Consider this situatoin:
                 //  optionA: [{name: 'a'}, {name: 'a'}, {..}]
                 //  optionB [{..}, {name: 'a'}, {name: 'a'}]
@@ -707,9 +696,9 @@ define(function (require) {
         var subType = newCptOption.type
             ? newCptOption.type
             : existComponent
-            ? existComponent.subType
-            // Use determineSubType only when there is no existComponent.
-            : ComponentModel.determineSubType(mainType, newCptOption);
+                ? existComponent.subType
+                // Use determineSubType only when there is no existComponent.
+                : ComponentModel.determineSubType(mainType, newCptOption);
 
         // tooltip, markline, markpoint may always has no subType
         return subType;

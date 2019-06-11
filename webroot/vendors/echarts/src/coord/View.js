@@ -18,6 +18,7 @@ define(function (require) {
     function TransformDummy() {
         Transformable.call(this);
     }
+
     zrUtil.mixin(TransformDummy, Transformable);
 
     function View(name) {
@@ -202,13 +203,12 @@ define(function (require) {
             viewTransform.updateTransform();
 
             viewTransform.transform
-                && matrix.copy(this.transform || (this.transform = []), viewTransform.transform);
+            && matrix.copy(this.transform || (this.transform = []), viewTransform.transform);
 
             if (this.transform) {
                 this.invTransform = this.invTransform || [];
                 matrix.invert(this.invTransform, this.transform);
-            }
-            else {
+            } else {
                 this.invTransform = null;
             }
             this.decomposeTransform();

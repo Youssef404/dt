@@ -128,8 +128,7 @@ define(function (require) {
                 labelPosOpt = orient === 'horizontal'
                     ? ((viewRect.y + viewRect.height / 2) < api.getHeight() / 2 ? '-' : '+')
                     : ((viewRect.x + viewRect.width / 2) < api.getWidth() / 2 ? '+' : '-');
-            }
-            else if (isNaN(labelPosOpt)) {
+            } else if (isNaN(labelPosOpt)) {
                 labelPosOpt = ({
                     horizontal: {top: '-', bottom: '+'},
                     vertical: {left: '-', right: '+'}
@@ -184,8 +183,7 @@ define(function (require) {
                 showPlayBtn && (playPosition = [0, 0], xLeft += sizePlusGap);
                 showPrevBtn && (prevBtnPosition = [xLeft, 0], xLeft += sizePlusGap);
                 showNextBtn && (nextBtnPosition = [xRight - controlSize, 0], xRight -= sizePlusGap);
-            }
-            else { // 'top' 'right'
+            } else { // 'top' 'right'
                 showPlayBtn && (playPosition = [xRight - controlSize, 0], xRight -= sizePlusGap);
                 showPrevBtn && (prevBtnPosition = [0, 0], xLeft += sizePlusGap);
                 showNextBtn && (nextBtnPosition = [xRight - controlSize, 0], xRight -= sizePlusGap);
@@ -257,8 +255,7 @@ define(function (require) {
                 var mainBoundIdx = labelPosOpt === '+' ? 0 : 1;
                 toBound(mainPosition, mainBound, viewBound, 1, mainBoundIdx);
                 toBound(labelsPosition, labelBound, viewBound, 1, 1 - mainBoundIdx);
-            }
-            else {
+            } else {
                 var mainBoundIdx = labelPosOpt >= 0 ? 0 : 1;
                 toBound(mainPosition, mainBound, viewBound, 1, mainBoundIdx);
                 labelsPosition[1] = mainPosition[1] + labelPosOpt;
@@ -371,8 +368,7 @@ define(function (require) {
                 if (itemModel.get('tooltip')) {
                     el.dataIndex = dataIndex;
                     el.dataModel = timelineModel;
-                }
-                else {
+                } else {
                     el.dataIndex = el.dataModel = null;
                 }
 
@@ -593,8 +589,7 @@ define(function (require) {
 
             if (nextIndex === '+') {
                 nextIndex = currentIndex + 1;
-            }
-            else if (nextIndex === '-') {
+            } else if (nextIndex === '-') {
                 nextIndex = currentIndex - 1;
             }
 
@@ -645,8 +640,7 @@ define(function (require) {
             );
             group.add(symbol);
             callback && callback.onCreate(symbol);
-        }
-        else {
+        } else {
             symbol.setStyle(itemStyle);
             symbol.setColor(color);
             group.add(symbol); // Group may be new, also need to add.
@@ -674,8 +668,7 @@ define(function (require) {
 
         if (noAnimation || !pointerModel.get('animation', true)) {
             pointer.attr({position: [toCoord, 0]});
-        }
-        else {
+        } else {
             pointer.stopAnimation(true);
             pointer.animateTo(
                 {position: [toCoord, 0]},

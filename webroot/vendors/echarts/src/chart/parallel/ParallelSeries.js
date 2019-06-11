@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     var List = require('../../data/List');
     var zrUtil = require('zrender/core/util');
@@ -26,8 +26,7 @@ define(function(require) {
                 if (axisModel.get('type') === 'category') {
                     translateCategoryValue(axisModel, dim, rawData);
                     return {name: dim, type: 'ordinal'};
-                }
-                else {
+                } else {
                     return dim;
                 }
             });

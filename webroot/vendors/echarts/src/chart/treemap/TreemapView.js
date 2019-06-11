@@ -1,4 +1,4 @@
- define(function(require) {
+define(function (require) {
 
     var zrUtil = require('zrender/core/util');
     var graphic = require('../../util/graphic');
@@ -288,8 +288,7 @@
                             }
                             // Others.
                             : {style: {opacity: 0}};
-                    }
-                    else {
+                    } else {
                         var targetX = 0;
                         var targetY = 0;
 
@@ -328,8 +327,7 @@
                             target.position = el.position.slice();
                             el.position = last.old;
                         }
-                    }
-                    else {
+                    } else {
                         if (last.old) {
                             target.shape = zrUtil.extend({}, el.shape);
                             el.setShape(last.old);
@@ -512,12 +510,10 @@
                 var node = targetInfo.node;
                 if (node.getLayout().isLeafRoot) {
                     this._rootToNode(targetInfo);
-                }
-                else {
+                } else {
                     if (nodeClick === 'zoomToNode') {
                         this._zoomToNode(targetInfo);
-                    }
-                    else if (nodeClick === 'link') {
+                    } else if (nodeClick === 'link') {
                         var itemModel = node.hostTree.data.getItemModel(node.dataIndex);
                         var link = itemModel.get('link', true);
                         var linkTarget = itemModel.get('target', true) || 'blank';
@@ -618,8 +614,7 @@
                         && point[1] <= shape.y + shape.height
                     ) {
                         targetInfo = {node: node, offsetX: point[0], offsetY: point[1]};
-                    }
-                    else {
+                    } else {
                         return false; // Suppress visit subtree.
                     }
                 }
@@ -749,8 +744,7 @@
                 if (!element.__tmWillVisible) {
                     element.invisible = false;
                 }
-            }
-            else {
+            } else {
                 // Delay invisible setting utill animation finished,
                 // avoid element vanish suddenly before animation.
                 !element.invisible && willInvisibleEls.push(element);
@@ -790,12 +784,10 @@
             var textRect = labelTextStyleModel.getTextRect(text);
             if (!labelModel.getShallow('show') || textRect.height > contentHeight) {
                 style.text = '';
-            }
-            else if (textRect.width > contentWidth) {
+            } else if (textRect.width > contentWidth) {
                 style.text = labelTextStyleModel.get('ellipsis')
                     ? labelTextStyleModel.ellipsis(text, contentWidth) : '';
-            }
-            else {
+            } else {
                 style.text = text;
             }
         }

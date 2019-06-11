@@ -24,8 +24,7 @@ define(function (require) {
             delta = getRealDelta(delta, handleEnds, extent);
             handleEnds[0] += delta;
             handleEnds[1] += delta;
-        }
-        else {
+        } else {
             delta = getRealDelta(delta, handleEnds[handleIndex], extent);
             handleEnds[handleIndex] += delta;
 

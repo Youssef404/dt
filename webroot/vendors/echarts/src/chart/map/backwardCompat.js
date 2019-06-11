@@ -16,6 +16,7 @@ define(function (require) {
         });
         return geoOpt;
     }
+
     return function (option) {
         // Save geoCoord
         var mapSeries = [];
@@ -43,8 +44,7 @@ define(function (require) {
                         var geoCoord;
                         if (dataOpt.geoCoord) {
                             geoCoord = dataOpt.geoCoord;
-                        }
-                        else if (dataOpt.name) {
+                        } else if (dataOpt.name) {
                             geoCoord = geoCoordsMap[dataOpt.name];
                         }
                         var newValue = geoCoord ? [geoCoord[0], geoCoord[1]] : [NaN, NaN];
@@ -60,8 +60,7 @@ define(function (require) {
                 if (!(seriesOpt.data && seriesOpt.data.length)) {
                     if (!option.geo) {
                         option.geo = [];
-                    }
-                    else if (!zrUtil.isArray(option.geo)) {
+                    } else if (!zrUtil.isArray(option.geo)) {
                         option.geo = [option.geo];
                     }
 

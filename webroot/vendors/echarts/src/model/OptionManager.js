@@ -167,8 +167,7 @@ define(function (require) {
                 if (newParsedOption.mediaDefault) {
                     oldOptionBackup.mediaDefault = newParsedOption.mediaDefault;
                 }
-            }
-            else {
+            } else {
                 this._optionBackup = newParsedOption;
             }
         },
@@ -293,8 +292,7 @@ define(function (require) {
                 if (singleMedia && singleMedia.option) {
                     if (singleMedia.query) {
                         mediaList.push(singleMedia);
-                    }
-                    else if (!mediaDefault) {
+                    } else if (!mediaDefault) {
                         // Use the first media default.
                         mediaDefault = singleMedia;
                     }
@@ -315,9 +313,9 @@ define(function (require) {
 
         // Preprocess.
         each([baseOption].concat(timelineOptions)
-            .concat(zrUtil.map(mediaList, function (media) {
-                return media.option;
-            })),
+                .concat(zrUtil.map(mediaList, function (media) {
+                    return media.option;
+                })),
             function (option) {
                 each(optionPreprocessorFuncs, function (preProcess) {
                     preProcess(option);
@@ -368,11 +366,9 @@ define(function (require) {
     function compare(real, expect, operator) {
         if (operator === 'min') {
             return real >= expect;
-        }
-        else if (operator === 'max') {
+        } else if (operator === 'max') {
             return real <= expect;
-        }
-        else { // Equals
+        } else { // Equals
             return real === expect;
         }
     }
@@ -415,8 +411,7 @@ define(function (require) {
 
             if (!ComponentModel.hasClass(mainType)) {
                 oldOption[mainType] = merge(oldCptOpt, newCptOpt, true);
-            }
-            else {
+            } else {
                 newCptOpt = modelUtil.normalizeToArray(newCptOpt);
                 oldCptOpt = modelUtil.normalizeToArray(oldCptOpt);
 

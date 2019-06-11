@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     'use strict';
 
@@ -45,6 +45,7 @@ define(function(require) {
     function sign(val) {
         return val >= 0 ? 1 : -1;
     }
+
     /**
      * @param {module:echarts/coord/cartesian/Cartesian2D|module:echarts/coord/polar/Polar} coordSys
      * @param {module:echarts/data/List} data
@@ -67,7 +68,7 @@ define(function(require) {
             // Find first stacked value with same sign
             while (stackedOn &&
                 sign(stackedOn.get(valueDim, idx)) === sign(val)
-            ) {
+                ) {
                 stackedOnSameSign = stackedOn;
                 break;
             }
@@ -83,8 +84,7 @@ define(function(require) {
     function queryDataIndex(data, payload) {
         if (payload.dataIndex != null) {
             return payload.dataIndex;
-        }
-        else if (payload.name != null) {
+        } else if (payload.name != null) {
             return data.indexOfName(payload.name);
         }
     }
@@ -104,8 +104,7 @@ define(function(require) {
         if (isHorizontal) {
             y -= expandSize;
             height += expandSize * 2;
-        }
-        else {
+        } else {
             x -= expandSize;
             width += expandSize * 2;
         }
@@ -243,16 +242,14 @@ define(function(require) {
                     );
                 }
                 lineGroup.setClipPath(createClipShape(coordSys, true, seriesModel));
-            }
-            else {
+            } else {
                 if (isAreaChart && !polygon) {
                     // If areaStyle is added
                     polygon = this._newPolygon(
                         points, stackedOnPoints,
                         coordSys, hasAnimation
                     );
-                }
-                else if (polygon && !isAreaChart) {
+                } else if (polygon && !isAreaChart) {
                     // If areaStyle is removed
                     lineGroup.remove(polygon);
                     polygon = this._polygon = null;
@@ -280,8 +277,7 @@ define(function(require) {
                         this._updateAnimation(
                             data, stackedOnPoints, coordSys, api
                         );
-                    }
-                    else {
+                    } else {
                         polyline.setShape({
                             points: points
                         });
@@ -369,8 +365,7 @@ define(function(require) {
                     this.group.add(symbol);
                 }
                 symbol.highlight();
-            }
-            else {
+            } else {
                 // Highlight whole series
                 ChartView.prototype.highlight.call(
                     this, seriesModel, ecModel, api, payload
@@ -387,13 +382,11 @@ define(function(require) {
                     if (symbol.__temp) {
                         data.setItemGraphicEl(dataIndex, null);
                         this.group.remove(symbol);
-                    }
-                    else {
+                    } else {
                         symbol.downplay();
                     }
                 }
-            }
-            else {
+            } else {
                 // Downplay whole series
                 ChartView.prototype.downplay.call(
                     this, seriesModel, ecModel, api, payload
@@ -540,11 +533,11 @@ define(function(require) {
             });
 
             this._polyline =
-            this._polygon =
-            this._coordSys =
-            this._points =
-            this._stackedOnPoints =
-            this._data = null;
+                this._polygon =
+                    this._coordSys =
+                        this._points =
+                            this._stackedOnPoints =
+                                this._data = null;
         }
     });
 });

@@ -31,20 +31,18 @@ define(function (require) {
                     mapDraw.draw(mapModel, ecModel, api, this, payload);
 
                     this._mapDraw = mapDraw;
-                }
-                else {
+                } else {
                     // Remove drawed map
                     this._mapDraw && this._mapDraw.remove();
                     this._mapDraw = null;
                 }
-            }
-            else {
+            } else {
                 var mapDraw = this._mapDraw;
                 mapDraw && group.add(mapDraw.group);
             }
 
             mapModel.get('showLegendSymbol') && ecModel.getComponent('legend')
-                && this._renderSymbols(mapModel, ecModel, api);
+            && this._renderSymbols(mapModel, ecModel, api);
         },
 
         remove: function () {

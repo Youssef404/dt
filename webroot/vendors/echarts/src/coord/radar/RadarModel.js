@@ -33,8 +33,7 @@ define(function (require) {
                 // PENDING
                 if (indicatorOpt.max != null && indicatorOpt.max > 0) {
                     indicatorOpt.min = 0;
-                }
-                else if (indicatorOpt.min != null && indicatorOpt.min < 0) {
+                } else if (indicatorOpt.min != null && indicatorOpt.min < 0) {
                     indicatorOpt.max = 0;
                 }
                 // Use same configuration
@@ -57,8 +56,7 @@ define(function (require) {
                 }
                 if (typeof nameFormatter === 'string') {
                     indicatorOpt.name = nameFormatter.replace('{value}', indicatorOpt.name);
-                }
-                else if (typeof nameFormatter === 'function') {
+                } else if (typeof nameFormatter === 'function') {
                     indicatorOpt.name = nameFormatter(
                         indicatorOpt.name, indicatorOpt
                     );

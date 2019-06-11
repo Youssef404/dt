@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     'use strict';
 
@@ -155,8 +155,7 @@ define(function(require) {
                 // Adjust layout by text align
                 if (textAlign === 'right') {
                     layoutRect.x += layoutRect.width;
-                }
-                else if (textAlign === 'center') {
+                } else if (textAlign === 'center') {
                     layoutRect.x += layoutRect.width / 2;
                 }
             }

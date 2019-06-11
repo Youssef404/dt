@@ -11,8 +11,7 @@ define(function (require) {
                     var point;
                     if (!isNaN(x) && !isNaN(y)) {
                         point = coordSys.dataToPoint([x, y]);
-                    }
-                    else {
+                    } else {
                         // Also {Array.<number>}, not undefined to avoid if...else... statement
                         point = [NaN, NaN];
                     }

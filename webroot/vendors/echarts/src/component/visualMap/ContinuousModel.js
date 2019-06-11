@@ -1,7 +1,7 @@
 /**
  * @file Data zoom model
  */
-define(function(require) {
+define(function (require) {
 
     var VisualMapModel = require('./VisualMapModel');
     var zrUtil = require('zrender/core/util');
@@ -73,8 +73,7 @@ define(function(require) {
                 // value like 'auto') for user-friend. (consider getOption).
                 dataExtent.auto = 1;
                 this.option.range = dataExtent;
-            }
-            else if (zrUtil.isArray(range)) {
+            } else if (zrUtil.isArray(range)) {
                 if (range[0] > range[1]) {
                     range.reverse();
                 }

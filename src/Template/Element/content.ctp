@@ -22,7 +22,7 @@
 
         <div class="clearfix"></div>
         <div class="row">
-            <?=$this->fetch('content')?>
+            <?= $this->fetch('content') ?>
         </div>
     </div>
 </div>

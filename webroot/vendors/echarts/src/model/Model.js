@@ -37,8 +37,7 @@ define(function (require) {
         if (this.init) {
             if (arguments.length <= 4) {
                 this.init(option, parentModel, ecModel, extraOpt);
-            }
-            else {
+            } else {
                 this.init.apply(this, arguments);
             }
         }
@@ -131,7 +130,8 @@ define(function (require) {
             return this.option == null;
         },
 
-        restoreData: function () {},
+        restoreData: function () {
+        },
 
         // Pending
         clone: function () {

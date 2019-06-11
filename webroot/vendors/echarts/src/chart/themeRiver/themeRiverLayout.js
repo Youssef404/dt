@@ -4,7 +4,7 @@
 define(function (require) {
 
     var zrUtil = require('zrender/core/util');
-    var numberUtil =  require('../../util/number');
+    var numberUtil = require('../../util/number');
 
 
     return function (ecModel, api) {
@@ -33,8 +33,7 @@ define(function (require) {
                 boundaryGap[1] = numberUtil.parsePercent(boundaryGap[1], rect.height);
                 var height = rect.height - boundaryGap[0] - boundaryGap[1];
                 themeRiverLayout(data, seriesModel, height);
-            }
-            else {
+            } else {
                 boundaryGap[0] = numberUtil.parsePercent(boundaryGap[0], rect.width);
                 boundaryGap[1] = numberUtil.parsePercent(boundaryGap[1], rect.width);
                 var width = rect.width - boundaryGap[0] - boundaryGap[1];

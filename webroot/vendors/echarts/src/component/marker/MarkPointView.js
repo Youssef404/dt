@@ -32,8 +32,7 @@ define(function (require) {
                 point = seriesModel.getMarkerPosition(
                     mpData.getValues(mpData.dimensions, idx)
                 );
-            }
-            else if (coordSys) {
+            } else if (coordSys) {
                 var x = mpData.get(coordSys.dimensions[0], idx);
                 var y = mpData.get(coordSys.dimensions[1], idx);
                 point = coordSys.dataToPoint([x, y]);
@@ -171,9 +170,8 @@ define(function (require) {
                 info.name = coordDim;
                 return info;
             });
-        }
-        else {
-            coordDimsInfos =[{
+        } else {
+            coordDimsInfos = [{
                 name: 'value',
                 type: 'float'
             }];
@@ -181,8 +179,8 @@ define(function (require) {
 
         var mpData = new List(coordDimsInfos, mpModel);
         var dataOpt = zrUtil.map(mpModel.get('data'), zrUtil.curry(
-                markerHelper.dataTransform, seriesModel
-            ));
+            markerHelper.dataTransform, seriesModel
+        ));
         if (coordSys) {
             dataOpt = zrUtil.filter(
                 dataOpt, zrUtil.curry(markerHelper.dataFilter, coordSys)

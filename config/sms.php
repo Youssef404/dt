@@ -1,7 +1,8 @@
 <?php
 
 
-class Smsconfig{
+class Smsconfig
+{
     public $default = [
         'transport' => 'Clickatell'
     ];

@@ -122,7 +122,7 @@ define(function (require) {
             // boundingRect will change when dragging, so we have
             // to keep initial boundingRect.
             this._containerRect = rect !== false
-            ? (rect || container.getBoundingRect()) : null;
+                ? (rect || container.getBoundingRect()) : null;
 
             // Add to new container.
             container.add(this.group);
@@ -260,8 +260,7 @@ define(function (require) {
                 this.group.add(this._cover);
             }
             coverRenderer.update.call(this, ranges);
-        }
-        else {
+        } else {
             this.group.remove(this._cover);
             this._cover = null;
         }

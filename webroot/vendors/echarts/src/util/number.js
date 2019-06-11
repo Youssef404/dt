@@ -41,21 +41,17 @@ define(function (require) {
             if (subDomain > 0) {
                 if (val <= domain[0]) {
                     return range[0];
-                }
-                else if (val >= domain[1]) {
+                } else if (val >= domain[1]) {
                     return range[1];
                 }
-            }
-            else {
+            } else {
                 if (val >= domain[0]) {
                     return range[0];
-                }
-                else if (val <= domain[1]) {
+                } else if (val <= domain[1]) {
                     return range[1];
                 }
             }
-        }
-        else {
+        } else {
             if (val === domain[0]) {
                 return range[0];
             }
@@ -75,7 +71,7 @@ define(function (require) {
      * @param {number} all
      * @return {number}
      */
-    number.parsePercent = function(percent, all) {
+    number.parsePercent = function (percent, all) {
         switch (percent) {
             case 'center':
             case 'middle':
@@ -212,18 +208,29 @@ define(function (require) {
         var f = val / exp10; // between 1 and 10
         var nf;
         if (round) {
-            if (f < 1.5) { nf = 1; }
-            else if (f < 2.5) { nf = 2; }
-            else if (f < 4) { nf = 3; }
-            else if (f < 7) { nf = 5; }
-            else { nf = 10; }
-        }
-        else {
-            if (f < 1) { nf = 1; }
-            else if (f < 2) { nf = 2; }
-            else if (f < 3) { nf = 3; }
-            else if (f < 5) { nf = 5; }
-            else { nf = 10; }
+            if (f < 1.5) {
+                nf = 1;
+            } else if (f < 2.5) {
+                nf = 2;
+            } else if (f < 4) {
+                nf = 3;
+            } else if (f < 7) {
+                nf = 5;
+            } else {
+                nf = 10;
+            }
+        } else {
+            if (f < 1) {
+                nf = 1;
+            } else if (f < 2) {
+                nf = 2;
+            } else if (f < 3) {
+                nf = 3;
+            } else if (f < 5) {
+                nf = 5;
+            } else {
+                nf = 10;
+            }
         }
         return nf * exp10;
     };

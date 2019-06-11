@@ -36,7 +36,7 @@ define(function (require) {
             this.group.add(axisBuilder.getGroup());
 
             zrUtil.each(selfBuilderAttrs, function (name) {
-                if (axisModel.get(name +'.show')) {
+                if (axisModel.get(name + '.show')) {
                     this['_' + name](axisModel, gridModel, layout.labelInterval);
                 }
             }, this);
@@ -82,8 +82,7 @@ define(function (require) {
                     p1[1] = gridRect.y;
                     p2[0] = tickCoord;
                     p2[1] = gridRect.y + gridRect.height;
-                }
-                else {
+                } else {
                     p1[0] = gridRect.x;
                     p1[1] = tickCoord;
                     p2[0] = gridRect.x + gridRect.width;
@@ -161,8 +160,7 @@ define(function (require) {
                     y = gridRect.y;
                     width = tickCoord - x;
                     height = gridRect.height;
-                }
-                else {
+                } else {
                     x = gridRect.x;
                     y = prevY;
                     width = gridRect.width;

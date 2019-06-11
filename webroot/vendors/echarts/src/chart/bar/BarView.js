@@ -60,12 +60,13 @@ define(function (require) {
                     var animateTarget = {};
                     rectShape[animateProperty] = 0;
                     animateTarget[animateProperty] = layout[animateProperty];
-                    graphic[isUpdate? 'updateProps' : 'initProps'](rect, {
+                    graphic[isUpdate ? 'updateProps' : 'initProps'](rect, {
                         shape: animateTarget
                     }, seriesModel, dataIndex);
                 }
                 return rect;
             }
+
             data.diff(oldData)
                 .add(function (dataIndex) {
                     // 空数据
@@ -169,8 +170,7 @@ define(function (require) {
                         ),
                         labelPositionOutside
                     );
-                }
-                else {
+                } else {
                     rectStyle.text = '';
                 }
                 if (hoverLabelModel.get('show')) {
@@ -182,8 +182,7 @@ define(function (require) {
                         ),
                         labelPositionOutside
                     );
-                }
-                else {
+                } else {
                     hoverStyle.text = '';
                 }
                 graphic.setHoverStyle(rect, hoverStyle);
@@ -206,8 +205,7 @@ define(function (require) {
                         });
                     });
                 }
-            }
-            else {
+            } else {
                 group.removeAll();
             }
         }

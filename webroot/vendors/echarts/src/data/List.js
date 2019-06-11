@@ -67,8 +67,7 @@ define(function (require) {
                     // Default is number, Precision of float may not enough
                     type: 'number'
                 };
-            }
-            else {
+            } else {
                 dimensionInfo = dimensions[i];
                 dimensionName = dimensionInfo.name;
                 dimensionInfo.type = dimensionInfo.type || 'number';
@@ -418,8 +417,7 @@ define(function (require) {
                 value > max && (max = value);
             }
             return (this._extent[dim + stack] = [min, max]);
-        }
-        else {
+        } else {
             return [Infinity, -Infinity];
         }
     };
@@ -600,8 +598,7 @@ define(function (require) {
             // Simple optimization
             else if (dimSize === 1) {
                 cb.call(context, this.get(dimensions[0], i, stack), i);
-            }
-            else {
+            } else {
                 for (var k = 0; k < dimSize; k++) {
                     value[k] = this.get(dimensions[k], i, stack);
                 }
@@ -645,8 +642,7 @@ define(function (require) {
                 keep = cb.call(
                     context, this.get(dimensions[0], i, stack), i
                 );
-            }
-            else {
+            } else {
                 for (var k = 0; k < dimSize; k++) {
                     value[k] = this.get(dimensions[k], i, stack);
                 }
@@ -708,8 +704,7 @@ define(function (require) {
                 storage[dim] = new dimStore.constructor(
                     originalStorage[dim].length
                 );
-            }
-            else {
+            } else {
                 // Direct reference for other dimensions
                 storage[dim] = originalStorage[dim];
             }

@@ -10,6 +10,7 @@ define(function (require) {
 
     var BLOCK_SPLITER = new Array(60).join('-');
     var ITEM_SPLITER = '\t';
+
     /**
      * Group series into two types
      *  1. on category axis, like line, bar
@@ -41,12 +42,10 @@ define(function (require) {
                         });
                     }
                     seriesGroupByCategoryAxis[key].series.push(seriesModel);
-                }
-                else {
+                } else {
                     otherSeries.push(seriesModel);
                 }
-            }
-            else {
+            } else {
                 otherSeries.push(seriesModel);
             }
         });
@@ -91,7 +90,7 @@ define(function (require) {
             }
             tables.push(lines.join('\n'));
         });
-        return tables.join('\n\n' +  BLOCK_SPLITER + '\n\n');
+        return tables.join('\n\n' + BLOCK_SPLITER + '\n\n');
     }
 
     /**
@@ -129,11 +128,11 @@ define(function (require) {
 
         return {
             value: zrUtil.filter([
-                    assembleSeriesWithCategoryAxis(result.seriesGroupByCategoryAxis),
-                    assembleOtherSeries(result.other)
-                ], function (str) {
-                    return str.replace(/[\n\t\s]/g, '');
-                }).join('\n\n' + BLOCK_SPLITER + '\n\n'),
+                assembleSeriesWithCategoryAxis(result.seriesGroupByCategoryAxis),
+                assembleOtherSeries(result.other)
+            ], function (str) {
+                return str.replace(/[\n\t\s]/g, '');
+            }).join('\n\n' + BLOCK_SPLITER + '\n\n'),
 
             meta: result.meta
         };
@@ -143,6 +142,7 @@ define(function (require) {
     function trim(str) {
         return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
     }
+
     /**
      * If a block is tsv format
      */
@@ -155,6 +155,7 @@ define(function (require) {
     }
 
     var itemSplitRegex = new RegExp('[' + ITEM_SPLITER + ']+', 'g');
+
     /**
      * @param {string} tsv
      * @return {Array.<Object>}
@@ -207,8 +208,7 @@ define(function (require) {
                     value: []
                 };
                 value = data[i].value;
-            }
-            else {
+            } else {
                 value = data[i] = [];
             }
             for (var j = 0; j < items.length; j++) {
@@ -249,8 +249,7 @@ define(function (require) {
                     };
                     newOption.series = newOption.series.concat(result.series);
                 }
-            }
-            else {
+            } else {
                 var result = parseListContents(block);
                 newOption.series.push(result);
             }
@@ -315,12 +314,10 @@ define(function (require) {
             var htmlOrDom = optionToContent(api.getOption());
             if (typeof htmlOrDom === 'string') {
                 viewMain.innerHTML = htmlOrDom;
-            }
-            else if (zrUtil.isDom(htmlOrDom)) {
+            } else if (zrUtil.isDom(htmlOrDom)) {
                 viewMain.appendChild(htmlOrDom);
             }
-        }
-        else {
+        } else {
             // Use default textarea
             viewMain.appendChild(textarea);
             textarea.readOnly = model.get('readOnly');
@@ -350,6 +347,7 @@ define(function (require) {
             container.removeChild(root);
             self._dom = null;
         }
+
         eventTool.addEventListener(closeButton, 'click', close);
 
         eventTool.addEventListener(refreshButton, 'click', function () {
@@ -357,12 +355,10 @@ define(function (require) {
             try {
                 if (typeof contentToOption === 'function') {
                     newOption = contentToOption(viewMain, api.getOption());
-                }
-                else {
+                } else {
                     newOption = parseContents(textarea.value, blockMetaList);
                 }
-            }
-            catch (e) {
+            } catch (e) {
                 close();
                 throw new Error('Data view format error ' + e);
             }
@@ -435,8 +431,7 @@ define(function (require) {
                 return zrUtil.defaults({
                     value: newVal
                 }, original);
-            }
-            else {
+            } else {
                 return newVal;
             }
         });
@@ -459,8 +454,7 @@ define(function (require) {
                     // Default is scatter
                     type: 'scatter'
                 }, seriesOpt));
-            }
-            else {
+            } else {
                 var originalData = seriesModel.get('data');
                 newSeriesOptList.push({
                     name: seriesOpt.name,

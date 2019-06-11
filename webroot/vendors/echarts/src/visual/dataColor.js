@@ -21,8 +21,7 @@ define(function (require) {
                         // Legend may use the visual info in data before processed
                         dataAll.setItemVisual(rawIdx, 'color', color);
                         data.setItemVisual(idx, 'color', color);
-                    }
-                    else {
+                    } else {
                         // Set data all color for legend
                         dataAll.setItemVisual(rawIdx, 'color', singleDataColor);
                     }

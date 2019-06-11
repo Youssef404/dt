@@ -16,6 +16,7 @@ define(function (require) {
         return round(a[0]) === round(b[0])
             && round(a[1]) === round(b[1]);
     }
+
     /**
      * @inner
      */
@@ -62,14 +63,12 @@ define(function (require) {
 
         if (x + width + gap > viewWidth) {
             x -= width + gap;
-        }
-        else {
+        } else {
             x += gap;
         }
         if (y + height + gap > viewHeight) {
             y -= height + gap;
-        }
-        else {
+        } else {
             y += gap;
         }
         return [x, y];
@@ -139,8 +138,7 @@ define(function (require) {
             );
             x = pos[0];
             y = pos[1];
-        }
-        else {
+        } else {
             var pos = refixTooltipPosition(
                 x, y, content.el, viewWidth, viewHeight
             );
@@ -257,8 +255,7 @@ define(function (require) {
             zr.off('globalout', this._hide);
             if (tooltipModel.get('triggerOn') === 'click') {
                 zr.on('click', this._tryShow, this);
-            }
-            else {
+            } else {
                 zr.on('mousemove', this._mousemove, this);
                 zr.on('mouseout', this._hide, this);
                 zr.on('globalout', this._hide, this);
@@ -273,8 +270,7 @@ define(function (require) {
                 this._showTimeout = setTimeout(function () {
                     self._tryShow(e);
                 }, showDelay);
-            }
-            else {
+            } else {
                 this._tryShow(e);
             }
         },
@@ -335,8 +331,7 @@ define(function (require) {
                         );
                         cx = point && point[0];
                         cy = point && point[1];
-                    }
-                    else if (el) {
+                    } else if (el) {
                         // Use graphic bounding rect
                         var rect = el.getBoundingRect().clone();
                         rect.applyTransform(el.transform);
@@ -352,8 +347,7 @@ define(function (require) {
                         });
                     }
                 }
-            }
-            else {
+            } else {
                 var el = api.getZr().handler.findHover(event.x, event.y);
                 this._tryShow({
                     offsetX: event.x,
@@ -386,12 +380,10 @@ define(function (require) {
                         // FIXME `axisPointer.axis` is not baseAxis
                         baseAxis = coordSys.getBaseAxis();
                         key = baseAxis.dim + baseAxis.index;
-                    }
-                    else if (coordSys.type === 'single') {
+                    } else if (coordSys.type === 'single') {
                         baseAxis = coordSys.getAxis();
                         key = baseAxis.dim + baseAxis.type;
-                    }
-                    else {
+                    } else {
                         baseAxis = coordSys.getBaseAxis();
                         key = baseAxis.dim + coordSys.name;
                     }
@@ -439,8 +431,7 @@ define(function (require) {
                 // Series or single data may use item trigger when global is axis trigger
                 if ((itemModel.get('tooltip.trigger') || globalTrigger) === 'axis') {
                     this._showAxisTooltip(tooltipModel, ecModel, e);
-                }
-                else {
+                } else {
                     // Reset ticket
                     this._ticket = '';
                     // If either single data or series use item trigger
@@ -457,12 +448,10 @@ define(function (require) {
                     dataIndex: el.dataIndex,
                     seriesIndex: el.seriesIndex
                 });
-            }
-            else {
+            } else {
                 if (globalTrigger === 'item') {
                     this._hide();
-                }
-                else {
+                } else {
                     // Try show axis tooltip
                     this._showAxisTooltip(tooltipModel, ecModel, e);
                 }
@@ -536,8 +525,7 @@ define(function (require) {
                         contentNotChange = true;
                     }
                     lastHover.data = value;
-                }
-                else {
+                } else {
                     var valIndex = zrUtil.indexOf(dimensions, axisType);
 
                     // If hover data not changed on the axis dimension
@@ -551,13 +539,11 @@ define(function (require) {
                     this._showCartesianPointer(
                         axisPointerModel, coordSys, axisType, point
                     );
-                }
-                else if (coordSys.type === 'polar' && !contentNotChange) {
+                } else if (coordSys.type === 'polar' && !contentNotChange) {
                     this._showPolarPointer(
                         axisPointerModel, coordSys, axisType, point
                     );
-                }
-                else if (coordSys.type === 'single' && !contentNotChange) {
+                } else if (coordSys.type === 'single' && !contentNotChange) {
                     this._showSinglePointer(
                         axisPointerModel, coordSys, axisType, point
                     );
@@ -598,8 +584,7 @@ define(function (require) {
                 moveGridLine('y', point, cartesian.getAxis('x').getGlobalExtent());
 
                 this._updateCrossText(cartesian, point, axisPointerModel);
-            }
-            else {
+            } else {
                 var otherAxis = cartesian.getAxis(axisType === 'x' ? 'y' : 'x');
                 var otherExtent = otherAxis.getGlobalExtent();
 
@@ -625,7 +610,7 @@ define(function (require) {
                     ? graphic.updateProps(pointerEl, {
                         shape: targetShape
                     }, axisPointerModel)
-                    :  pointerEl.attr({
+                    : pointerEl.attr({
                         shape: targetShape
                     });
             }
@@ -648,7 +633,7 @@ define(function (require) {
                     ? graphic.updateProps(pointerEl, {
                         shape: targetShape
                     }, axisPointerModel)
-                    :  pointerEl.attr({
+                    : pointerEl.attr({
                         shape: targetShape
                     });
             }
@@ -681,7 +666,7 @@ define(function (require) {
                     ? graphic.updateProps(pointerEl, {
                         shape: targetShape
                     }, axisPointerModel)
-                    :  pointerEl.attr({
+                    : pointerEl.attr({
                         shape: targetShape
                     });
             }
@@ -710,8 +695,7 @@ define(function (require) {
                 movePolarLine('radius', point, angleAxis.getExtent());
 
                 this._updateCrossText(polar, point, axisPointerModel);
-            }
-            else {
+            } else {
                 var otherAxis = polar.getAxis(axisType === 'radius' ? 'angle' : 'radius');
                 var otherExtent = otherAxis.getExtent();
 
@@ -719,6 +703,7 @@ define(function (require) {
                     axisType, point, otherExtent
                 );
             }
+
             /**
              * @inner
              */
@@ -731,8 +716,7 @@ define(function (require) {
                     var p1 = polar.coordToPoint([otherExtent[0], mouseCoord[1]]);
                     var p2 = polar.coordToPoint([otherExtent[1], mouseCoord[1]]);
                     targetShape = makeLineShape(p1[0], p1[1], p2[0], p2[1]);
-                }
-                else {
+                } else {
                     targetShape = {
                         cx: polar.cx,
                         cy: polar.cy,
@@ -748,7 +732,7 @@ define(function (require) {
                     ? graphic.updateProps(pointerEl, {
                         shape: targetShape
                     }, axisPointerModel)
-                    :  pointerEl.attr({
+                    : pointerEl.attr({
                         shape: targetShape
                     });
             }
@@ -774,8 +758,7 @@ define(function (require) {
                         (-mouseCoord[1] - bandWidth / 2) * radian,
                         (-mouseCoord[1] + bandWidth / 2) * radian
                     );
-                }
-                else {
+                } else {
                     targetShape = makeSectorShape(
                         polar.cx, polar.cy,
                         mouseCoord[0] - bandWidth / 2,
@@ -791,7 +774,7 @@ define(function (require) {
                     ? graphic.updateProps(pointerEl, {
                         shape: targetShape
                     }, axisPointerModel)
-                    :  pointerEl.attr({
+                    : pointerEl.attr({
                         shape: targetShape
                     });
             }
@@ -821,8 +804,7 @@ define(function (require) {
                 var axis = coordSys.getAxis(dims[idx]);
                 if (axis.type === 'category' || axis.type === 'time') {
                     val = axis.scale.getLabel(val);
-                }
-                else {
+                } else {
                     val = formatUtil.addCommas(
                         val.toFixed(axis.getPixelPrecision())
                     );
@@ -962,12 +944,10 @@ define(function (require) {
                             + zrUtil.map(seriesList, function (series, index) {
                                 return series.formatTooltip(payloadBatch[index].dataIndex, true);
                             }).join('<br />');
-                    }
-                    else {
+                    } else {
                         if (typeof formatter === 'string') {
                             html = formatUtil.formatTpl(formatter, paramsList);
-                        }
-                        else if (typeof formatter === 'function') {
+                        } else if (typeof formatter === 'function') {
                             var self = this;
                             var ticket = 'axis_' + coordSys.name + '_' + firstDataIndex;
                             var callback = function (cbTicket, html) {
@@ -1017,8 +997,7 @@ define(function (require) {
             // If series model
             if (tooltipModel.parentModel) {
                 tooltipModel.parentModel.parentModel = rootTooltipModel;
-            }
-            else {
+            } else {
                 tooltipModel.parentModel = this._tooltipModel;
             }
 
@@ -1029,12 +1008,10 @@ define(function (require) {
                 var html;
                 if (!formatter) {
                     html = seriesModel.formatTooltip(dataIndex, false, dataType);
-                }
-                else {
+                } else {
                     if (typeof formatter === 'string') {
                         html = formatUtil.formatTpl(formatter, params);
-                    }
-                    else if (typeof formatter === 'function') {
+                    } else if (typeof formatter === 'function') {
                         var self = this;
                         var ticket = 'item_' + seriesModel.name + '_' + dataIndex;
                         var callback = function (cbTicket, html) {
@@ -1072,8 +1049,7 @@ define(function (require) {
                 axisPointers && zrUtil.each(axisPointers, function (el) {
                     el.show();
                 });
-            }
-            else {
+            } else {
                 this.group.eachChild(function (child) {
                     child.show();
                 });
@@ -1102,8 +1078,7 @@ define(function (require) {
                 axisPointers && zrUtil.each(axisPointers, function (el) {
                     el.hide();
                 });
-            }
-            else {
+            } else {
                 this.group.hide();
             }
         },

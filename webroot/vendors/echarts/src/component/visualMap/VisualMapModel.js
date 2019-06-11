@@ -1,7 +1,7 @@
 /**
  * @file Data zoom model
  */
-define(function(require) {
+define(function (require) {
 
     var zrUtil = require('zrender/core/util');
     var env = require('zrender/core/env');
@@ -52,8 +52,8 @@ define(function(require) {
             zlevel: 0,
             z: 4,
 
-                                    // set min: 0, max: 200, only for campatible with ec2.
-                                    // In fact min max should not have default value.
+            // set min: 0, max: 200, only for campatible with ec2.
+            // In fact min max should not have default value.
             min: 0,                 // min value, must specified if pieces is not specified.
             max: 200,               // max value, must specified if pieces is not specified.
 
@@ -174,7 +174,7 @@ define(function(require) {
          * @return {string}
          * @protected
          */
-        formatValueText: function(value, isCategory) {
+        formatValueText: function (value, isCategory) {
             var option = this.option;
             var precision = option.precision;
             var dataBound = this.dataBound;
@@ -190,16 +190,15 @@ define(function(require) {
             textValue = isCategory
                 ? value
                 : (isMinMax
-                    ? [toFixed(value[0]), toFixed(value[1])]
-                    : toFixed(value)
+                        ? [toFixed(value[0]), toFixed(value[1])]
+                        : toFixed(value)
                 );
 
             if (zrUtil.isString(formatter)) {
                 return formatter
                     .replace('{value}', isMinMax ? textValue[0] : textValue)
                     .replace('{value2}', isMinMax ? textValue[1] : textValue);
-            }
-            else if (zrUtil.isFunction(formatter)) {
+            } else if (zrUtil.isFunction(formatter)) {
                 return isMinMax
                     ? formatter(value[0], value[1])
                     : formatter(value);
@@ -208,15 +207,12 @@ define(function(require) {
             if (isMinMax) {
                 if (value[0] === dataBound[0]) {
                     return '< ' + textValue[1];
-                }
-                else if (value[1] === dataBound[1]) {
+                } else if (value[1] === dataBound[1]) {
                     return '> ' + textValue[0];
-                }
-                else {
+                } else {
                     return textValue[0] + ' - ' + textValue[1];
                 }
-            }
-            else { // Format single value (includes category case).
+            } else { // Format single value (includes category case).
                 return textValue;
             }
 
@@ -224,8 +220,8 @@ define(function(require) {
                 return val === dataBound[0]
                     ? 'min'
                     : val === dataBound[1]
-                    ? 'max'
-                    : (+val).toFixed(precision);
+                        ? 'max'
+                        : (+val).toFixed(precision);
             }
         },
 
@@ -324,7 +320,8 @@ define(function(require) {
             }
 
             function createMappings() {
-                var Creater = function () {};
+                var Creater = function () {
+                };
                 // Make sure hidden fields will not be visited by
                 // object iteration (with hasOwnProperty checking).
                 Creater.prototype.__hidden = Creater.prototype;
@@ -376,8 +373,7 @@ define(function(require) {
                         if (defa) {
                             base[state] = {};
                             base[state][visualType] = defa;
-                        }
-                        else {
+                        } else {
                             // Mark as not specified.
                             delete base[state];
                         }
@@ -527,8 +523,7 @@ define(function(require) {
         has && zrUtil.each(visualKeys, function (key) {
             if (newOption.hasOwnProperty(key)) {
                 thisOption[key] = zrUtil.clone(newOption[key]);
-            }
-            else {
+            } else {
                 delete thisOption[key];
             }
         });

@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     var VisualMapView = require('./VisualMapView');
     var zrUtil = require('zrender/core/util');
@@ -112,8 +112,7 @@ define(function(require) {
                 return helper.getItemAlign(
                     visualMapModel, this.api, visualMapModel.itemSize
                 );
-            }
-            else { // horizontal, most case left unless specifying right.
+            } else { // horizontal, most case left unless specifying right.
                 var align = modelOption.align;
                 if (!align || align === 'auto') {
                     align = 'left';
@@ -183,12 +182,10 @@ define(function(require) {
             var representValue;
             if (this.visualMapModel.isCategory()) {
                 representValue = piece.value;
-            }
-            else {
+            } else {
                 if (piece.value != null) {
                     representValue = piece.value;
-                }
-                else {
+                } else {
                     var pieceInterval = piece.interval || [];
                     representValue = (pieceInterval[0] + pieceInterval[1]) / 2;
                 }
@@ -221,8 +218,7 @@ define(function(require) {
                 zrUtil.each(selected, function (o, key) {
                     selected[key] = key === newKey;
                 });
-            }
-            else {
+            } else {
                 selected[newKey] = !selected[newKey];
             }
 

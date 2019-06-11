@@ -1,4 +1,4 @@
-describe('title', function() {
+describe('title', function () {
 
     var uiHelper = window.uiHelper;
 

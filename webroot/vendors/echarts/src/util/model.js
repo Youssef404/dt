@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     var formatUtil = require('./format');
     var nubmerUtil = require('./number');
@@ -67,8 +67,8 @@ define(function(require) {
         return zrUtil.isArray(value)
             ? value
             : value == null
-            ? []
-            : [value];
+                ? []
+                : [value];
     };
 
     /**
@@ -159,7 +159,7 @@ define(function(require) {
      * @param {Object} opt
      * @param {Array.<string>} subOpts
      */
-     modelUtil.defaultEmphasis = function (opt, subOpts) {
+    modelUtil.defaultEmphasis = function (opt, subOpts) {
         if (opt) {
             var emphasisOpt = opt.emphasis = opt.emphasis || {};
             var normalOpt = opt.normal = opt.normal || {};
@@ -269,8 +269,7 @@ define(function(require) {
             if (typeof formatter === 'function') {
                 params.status = status;
                 return formatter(params);
-            }
-            else if (typeof formatter === 'string') {
+            } else if (typeof formatter === 'string') {
                 return formatUtil.formatTpl(formatter, params);
             }
         },

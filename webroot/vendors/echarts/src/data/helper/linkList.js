@@ -66,8 +66,7 @@ define(function (require) {
             var datas = zrUtil.extend({}, this[DATAS]);
             datas[this.dataType] = res;
             linkAll(res, datas, opt);
-        }
-        else {
+        } else {
             // Modify the reference in main data to point newData.
             linkSingle(res, this.dataType, this[MAIN_DATA], opt);
         }

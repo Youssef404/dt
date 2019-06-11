@@ -81,15 +81,13 @@ define(function (require) {
         if (mappingMethod === 'piecewise') {
             normalizeVisualRange(thisOption);
             preprocessForPiecewise(thisOption);
-        }
-        else if (mappingMethod === 'category') {
+        } else if (mappingMethod === 'category') {
             thisOption.categories
                 ? preprocessForSpecifiedCategory(thisOption)
                 // categories is ordinal when thisOption.categories not specified,
                 // which need no more preprocess except normalize visual.
                 : normalizeVisualRange(thisOption, true);
-        }
-        else { // mappingMethod === 'linear'
+        } else { // mappingMethod === 'linear'
             zrUtil.assert(thisOption.dataExtent);
             normalizeVisualRange(thisOption);
         }
@@ -127,18 +125,18 @@ define(function (require) {
 
                 return zrUtil.bind(
                     isCategory(this)
-                    ? function (value, isNormalized) {
-                        !isNormalized && (value = this._normalizeData(value));
-                        return getVisualForCategory(this, visual, value);
-                    }
-                    : function (value, isNormalized, out) {
-                        // If output rgb array
-                        // which will be much faster and useful in pixel manipulation
-                        var returnRGBArray = !!out;
-                        !isNormalized && (value = this._normalizeData(value));
-                        out = zrColor.fastMapToColor(value, visual, out);
-                        return returnRGBArray ? out : zrUtil.stringify(out, 'rgba');
-                    }, this);
+                        ? function (value, isNormalized) {
+                            !isNormalized && (value = this._normalizeData(value));
+                            return getVisualForCategory(this, visual, value);
+                        }
+                        : function (value, isNormalized, out) {
+                            // If output rgb array
+                            // which will be much faster and useful in pixel manipulation
+                            var returnRGBArray = !!out;
+                            !isNormalized && (value = this._normalizeData(value));
+                            out = zrColor.fastMapToColor(value, visual, out);
+                            return returnRGBArray ? out : zrUtil.stringify(out, 'rgba');
+                        }, this);
             },
 
             mapValueToVisual: function (value) {
@@ -196,8 +194,7 @@ define(function (require) {
                 var symbolCfg = this.mapValueToVisual(value);
                 if (zrUtil.isString(symbolCfg)) {
                     setter('symbol', symbolCfg);
-                }
-                else if (isObject(symbolCfg)) {
+                } else if (isObject(symbolCfg)) {
                     for (var name in symbolCfg) {
                         if (symbolCfg.hasOwnProperty(name)) {
                             setter(name, symbolCfg[name]);
@@ -274,8 +271,7 @@ define(function (require) {
                     var index = categoryMap[cate];
                     visualArr[index != null ? index : CATEGORY_DEFAULT_VISUAL_INDEX] = v;
                 });
-            }
-            else { // Is primary type, represents default visual.
+            } else { // Is primary type, represents default visual.
                 visualArr[CATEGORY_DEFAULT_VISUAL_INDEX] = visual;
             }
 
@@ -300,8 +296,7 @@ define(function (require) {
             each(visual, function (v) {
                 visualArr.push(v);
             });
-        }
-        else if (visual != null) {
+        } else if (visual != null) {
             visualArr.push(visual);
         }
 
@@ -345,7 +340,7 @@ define(function (require) {
     function arrayGetByNormalizedValue(arr, normalized) {
         return arr[
             Math.round(linearMap(normalized, [0, 1], [0, arr.length - 1], true))
-        ];
+            ];
     }
 
     function defaultApplyColor(value, getter, setter) {
@@ -357,7 +352,7 @@ define(function (require) {
             (me.option.loop && normalized !== CATEGORY_DEFAULT_VISUAL_INDEX)
                 ? normalized % visual.length
                 : normalized
-        ];
+            ];
     }
 
     function isCategory(me) {
@@ -436,8 +431,7 @@ define(function (require) {
     VisualMapping.eachVisual = function (visual, callback, context) {
         if (zrUtil.isObject(visual)) {
             zrUtil.each(visual, callback, context);
-        }
-        else {
+        } else {
             callback.call(context, visual);
         }
     };
@@ -447,8 +441,8 @@ define(function (require) {
         var newVisual = zrUtil.isArray(visual)
             ? []
             : zrUtil.isObject(visual)
-            ? {}
-            : (isPrimary = true, null);
+                ? {}
+                : (isPrimary = true, null);
 
         VisualMapping.eachVisual(visual, function (v, key) {
             var newVal = callback.call(context, v, key);
@@ -492,11 +486,9 @@ define(function (require) {
                 types.push(type);
             });
             visualTypes = types;
-        }
-        else if (zrUtil.isArray(visualTypes)) {
+        } else if (zrUtil.isArray(visualTypes)) {
             visualTypes = visualTypes.slice();
-        }
-        else {
+        } else {
             return [];
         }
 
@@ -546,13 +538,11 @@ define(function (require) {
                     if (value < interval[1]) {
                         return i;
                     }
-                }
-                else if (interval[1] === Infinity) {
+                } else if (interval[1] === Infinity) {
                     if (interval[0] < value) {
                         return i;
                     }
-                }
-                else if (
+                } else if (
                     piece.interval[0] <= value
                     && value <= piece.interval[1]
                 ) {

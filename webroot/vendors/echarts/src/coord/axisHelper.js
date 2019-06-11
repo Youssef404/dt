@@ -22,8 +22,7 @@ define(function (require) {
             // If series has no data, scale extent may be wrong
             if (!isFinite(span)) {
                 return [0, 0];
-            }
-            else {
+            } else {
                 return originalExtent;
             }
         }
@@ -113,7 +112,7 @@ define(function (require) {
      * @param {string} [axisType] Default retrieve from model.type
      * @return {module:echarts/scale/*}
      */
-    axisHelper.createScaleByModel = function(model, axisType) {
+    axisHelper.createScaleByModel = function (model, axisType) {
         axisType = axisType || model.get('type');
         if (axisType) {
             switch (axisType) {
@@ -175,8 +174,7 @@ define(function (require) {
             else if (textSpaceTakenRect.intersect(rect)) {
                 accumulatedLabelInterval++;
                 autoLabelInterval = Math.max(autoLabelInterval, accumulatedLabelInterval);
-            }
-            else {
+            } else {
                 textSpaceTakenRect.union(rect);
                 // Reset
                 accumulatedLabelInterval = 0;
@@ -204,16 +202,14 @@ define(function (require) {
                 };
             })(labelFormatter);
             return zrUtil.map(labels, labelFormatter);
-        }
-        else if (typeof labelFormatter === 'function') {
+        } else if (typeof labelFormatter === 'function') {
             return zrUtil.map(ticks, function (tick, idx) {
                 return labelFormatter(
                     axis.type === 'category' ? scale.getLabel(tick) : tick,
                     idx
                 );
             }, this);
-        }
-        else {
+        } else {
             return labels;
         }
     };

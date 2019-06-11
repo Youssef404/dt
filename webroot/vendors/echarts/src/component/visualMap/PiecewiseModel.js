@@ -1,4 +1,4 @@
-define(function(require) {
+define(function (require) {
 
     var VisualMapModel = require('./VisualMapModel');
     var zrUtil = require('zrender/core/util');
@@ -89,8 +89,7 @@ define(function(require) {
                 if (mode === 'categories') {
                     mappingOption.mappingMethod = 'category';
                     mappingOption.categories = zrUtil.clone(categories);
-                }
-                else {
+                } else {
                     mappingOption.mappingMethod = 'piecewise';
                     mappingOption.pieceList = zrUtil.map(this._pieceList, function (piece) {
                         var piece = zrUtil.clone(piece);
@@ -160,8 +159,8 @@ define(function(require) {
             return option.pieces && option.pieces.length > 0
                 ? 'pieces'
                 : this.option.categories
-                ? 'categories'
-                : 'splitNumber';
+                    ? 'categories'
+                    : 'splitNumber';
         },
 
         /**
@@ -181,7 +180,7 @@ define(function(require) {
 
             return index != null
                 ? (this.option.selected[this.getSelectedMapKey(this._pieceList[index])]
-                    ? 'inRange' : 'outOfRange'
+                        ? 'inRange' : 'outOfRange'
                 )
                 : 'outOfRange';
         },
@@ -283,8 +282,7 @@ define(function(require) {
                     if (!hasLabel) {
                         item.text = this.formatValueText(item.value);
                     }
-                }
-                else {
+                } else {
                     var min = pieceListItem.min;
                     var max = pieceListItem.max;
                     min == null && (min = -Infinity);
@@ -315,7 +313,7 @@ define(function(require) {
     function normalizeReverse(thisOption, arr) {
         var inverse = thisOption.inverse;
         if (thisOption.orient === 'vertical' ? !inverse : inverse) {
-             arr.reverse();
+            arr.reverse();
         }
     }
 
