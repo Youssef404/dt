@@ -67,6 +67,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <script src="<?= $webroot ?>vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="<?= $webroot ?>vendors/nprogress/nprogress.js"></script>
+<!-- bootstrap-datetimepicker -->
+<script src="<?= $webroot ?>vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 <!-- bootstrap-wysiwyg -->
 <script src="<?= $webroot ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
 <script src="<?= $webroot ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
@@ -75,6 +77,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 <!-- Custom Theme Scripts -->
 <script src="<?= $webroot ?>build/js/custom.min.js"></script>
+
+<script>
+    $('#myDatepicker2').datetimepicker({
+        format: 'DD.MM.YYYY'
+    });
+
+    $('#myDatepicker1').datetimepicker({
+        format: 'DD.MM.YYYY'
+    });
+</script>
 </body>
 
 </html>
