@@ -9,7 +9,7 @@
                 <li class="">
                     <a href="" class="user-profile dropdown-toggle" data-toggle="dropdown"
                        aria-expanded="false">
-                        <img src="<?=$webroot?>production/images/img.jpg" alt="">Youssef El Kasmi
+                        <img src="<?=$webroot?>production/images/img.jpg" alt=""><?=$user['first_name'].' '.$user['last_name'] ?>
                         <span class=" fa fa-angle-down"></span>
                     </a>
                     <ul class="dropdown-menu dropdown-usermenu pull-right">

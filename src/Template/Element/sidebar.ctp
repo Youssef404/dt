@@ -13,7 +13,7 @@
             </div>
             <div class="profile_info">
                 <span>Bienvenue,</span>
-                <h2>Youssef El Kasmi</h2>
+                <h2><?=$user['first_name'].' '.$user['last_name'] ?></h2>
             </div>
         </div>
         <!-- /menu profile quick info -->

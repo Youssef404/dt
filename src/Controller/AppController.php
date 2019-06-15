@@ -63,6 +63,11 @@ class AppController extends Controller
             'unauthorizedRedirect' => $this->referer()
         ]);
         $this->Auth->allow(['display', 'index', 'view']);
+        $user = null;
+        if($this->Auth->user())
+        {
+            $user = $this->Auth->user();
+        }
 
         /*
          * Enable the following component for recommended CakePHP security settings.
@@ -70,5 +75,6 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         $this->set('webroot', $this->request->getAttribute('webroot'));
+        $this->set(compact('user'));
     }
 }
