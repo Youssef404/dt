@@ -1,4 +1,5 @@
 <!-- page content -->
+<?php if($this->request->getParam('action')!='login'):?>
 <div class="right_col" role="main">
     <div class="">
 
@@ -26,3 +27,7 @@
         </div>
     </div>
 </div>
+<?php else:?>
+<?= $this->fetch('content') ?>
+<?php endif;?>
+

@@ -25,7 +25,6 @@ class EmployeesController extends AppController
     public function index()
     {
         $employees = $this->Employees->find();
-
         $this->set(compact('employees'));
     }
 
@@ -42,11 +41,6 @@ class EmployeesController extends AppController
             'contain' => ['Vouchers']
         ]);
         $this->set(compact('employee'));
-        $CakeSms = new ClickatellSmsTransport();
-        $sms = new \CakeSms();
-        $sms->addTo('+212606252775');
-        $sms->send('Test 3456');
-        $CakeSms->send($sms);
 
     }
 
@@ -68,6 +62,7 @@ class EmployeesController extends AppController
             $this->Flash->error(__('The employee could not be saved. Please, try again.'));
         }
         $this->set(compact('employee'));
+
     }
 
     /**
@@ -112,5 +107,23 @@ class EmployeesController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            $user = $this->Auth->identify();
+            if ($user) {
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Flash->error(__('Username or password is incorrect'));
+            }
+        }
+    }
+
+    public function logout(){
+        $this->Flash->success('Vous avez été déconnecté');
+        return $this->redirect($this->Auth->logout());
     }
 }

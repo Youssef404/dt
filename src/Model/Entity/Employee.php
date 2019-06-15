@@ -1,7 +1,7 @@
 <?php
-
 namespace App\Model\Entity;
 
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -13,6 +13,8 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenDate|null $birth_date
  * @property \Cake\I18n\FrozenDate|null $hire_date
  * @property string $role
+ * @property string|null $email
+ * @property string|null $password
  *
  * @property \App\Model\Entity\Voucher[] $vouchers
  */
@@ -33,6 +35,25 @@ class Employee extends Entity
         'birth_date' => true,
         'hire_date' => true,
         'role' => true,
+        'email' => true,
+        'password' => true,
         'vouchers' => true
     ];
+
+    /**
+     * Fields that are excluded from JSON versions of the entity.
+     *
+     * @var array
+     */
+    protected $_hidden = [
+        'password'
+    ];
+
+    protected function _setPassword($value)
+    {
+        if (strlen($value)) {
+            $hasher = new DefaultPasswordHasher();
+            return $hasher->hash($value);
+        }
+    }
 }

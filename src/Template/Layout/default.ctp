@@ -27,7 +27,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
 
     <!-- Bootstrap -->
-    <link href="<?= $webroot ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= $webroot ?>vendors/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/v4-shims.css">
@@ -49,15 +49,19 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!-- Custom styling plus plugins -->
     <link href="<?= $webroot ?>build/css/custom.css" rel="stylesheet">
 </head>
-<body class="nav-md">
+<body class="<?= $this->request->getParam('action')=='login'? 'login' : 'nav-md' ?>">
 <!-- jQuery -->
 <script src="<?= $webroot ?>vendors/jquery/dist/jquery.min.js"></script>
 <div class="container body">
     <div class="main_container">
-        <?= $this->element('sidebar') ?>
-        <?= $this->element('top_bar') ?>
+        <?php
+        if($this->request->getParam('action')!='login'){
+            echo $this->element('sidebar');
+            echo $this->element('top_bar') ;
+        }
+        ?>
         <?= $this->element('content') ?>
-        <?= $this->element('footer') ?>
+        <?= $this->request->getParam('action')=='login'? null:$this->element('footer') ?>
     </div>
 </div>
 
@@ -68,6 +72,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!-- NProgress -->
 <script src="<?= $webroot ?>vendors/nprogress/nprogress.js"></script>
 <!-- bootstrap-datetimepicker -->
+<script src="<?= $webroot ?>vendors/moment/min/moment.min.js"></script>
 <script src="<?= $webroot ?>vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 <!-- bootstrap-wysiwyg -->
 <script src="<?= $webroot ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
