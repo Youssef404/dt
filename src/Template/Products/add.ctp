@@ -97,13 +97,3 @@
         </div>
     </div>
 </div>
-<script src="<?= $webroot ?>vendors/moment/min/moment.min.js"></script>
-<script src="<?= $webroot ?>vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-<script>
-    $('#myDatepicker2').datetimepicker({
-        format: 'YYYY-MM-DD'
-    });
-    $('#myDatepicker1').datetimepicker({
-        format: 'YYYY-MM-DD'
-    });
-</script>

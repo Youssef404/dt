@@ -61,8 +61,7 @@
                             'class' => 'form-control',
                             'label' => '',
                             'required' => true,
-                            'allowEmpty' => false,
-                            'empty' => true
+                            'allowEmpty' => false
                         ]); ?>
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
@@ -78,8 +77,7 @@
                             'class' => 'form-control',
                             'label' => '',
                             'required' => true,
-                            'allowEmpty' => false,
-                            'empty' => true
+                            'allowEmpty' => false
                         ]); ?>
                         <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>

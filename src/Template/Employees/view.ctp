@@ -5,30 +5,26 @@
  */
 ?>
 <div class="employees view large-9 medium-8 columns content">
-    <h3><?= h($employee->id) ?></h3>
-    <table class="vertical-table">
+    <h3>Id : <?= h($employee->id) ?></h3>
+    <table class="vertical-table table">
         <tr>
-            <th scope="row"><?= __('First Name') ?></th>
+            <th scope="row" class="col-lg-4"><?= __('First Name') ?></th>
             <td><?= h($employee->first_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Last Name') ?></th>
+            <th scope="row" class="col-lg-4"><?= __('Last Name') ?></th>
             <td><?= h($employee->last_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Role') ?></th>
+            <th scope="row" class="col-lg-4"><?= __('Role') ?></th>
             <td><?= h($employee->role) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($employee->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Birth Date') ?></th>
+            <th scope="row" class="col-lg-4"><?= __('Birth Date') ?></th>
             <td><?= h($employee->birth_date) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Hire Date') ?></th>
+            <th scope="row" class="col-lg-4"><?= __('Hire Date') ?></th>
             <td><?= h($employee->hire_date) ?></td>
         </tr>
     </table>
