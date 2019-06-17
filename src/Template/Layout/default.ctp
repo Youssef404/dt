@@ -71,11 +71,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <script src="<?= $webroot ?>vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="<?= $webroot ?>vendors/nprogress/nprogress.js"></script>
+<script src="<?= $webroot ?>vendors/moment/min/moment.min.js"></script>
 <!-- bootstrap-datetimepicker -->
 <script src="<?= $webroot ?>vendors/moment/min/moment.min.js"></script>
 <script src="<?= $webroot ?>vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 <!-- bootstrap-wysiwyg -->
 <script src="<?= $webroot ?>vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<!-- jQuery Smart Wizard -->
+<script src="<?= $webroot ?>vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 <script src="<?= $webroot ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
 <script src="<?= $webroot ?>vendors/google-code-prettify/src/prettify.js"></script>
 

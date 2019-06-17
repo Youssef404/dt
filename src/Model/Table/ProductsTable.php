@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -76,6 +75,10 @@ class ProductsTable extends Table
             ->numeric('unit_price')
             ->requirePresence('unit_price', 'create')
             ->allowEmptyString('unit_price', false);
+
+        $validator
+            ->integer('quantity')
+            ->allowEmptyString('quantity');
 
         return $validator;
     }

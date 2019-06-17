@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -11,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property int|null $min_quantity
  * @property float $unit_price
+ * @property int|null $quantity
  *
  * @property \App\Model\Entity\Supplier[] $suppliers
  * @property \App\Model\Entity\Voucher[] $vouchers
@@ -30,6 +30,7 @@ class Product extends Entity
         'name' => true,
         'min_quantity' => true,
         'unit_price' => true,
+        'quantity' => true,
         'suppliers' => true,
         'vouchers' => true
     ];
