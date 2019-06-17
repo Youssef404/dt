@@ -24,7 +24,7 @@
                         <td class="actions">
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-folder']).__('Afficher'), ['action' => 'view', $suppliers->id],['class'=>'btn btn-primary btn-xs ','escape'=>false]) ?>
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-pencil']).__('Modifier'), ['action' => 'edit', $suppliers->id],['class'=>'btn btn-info btn-xs ','escape'=>false]) ?>
-                            <?= $this->Form->postLink($this->Html->tag('i',"",['class'=>'fa fa-trash-o'])._('Supprimer'), ['action' => 'delete', $suppliers->id],['class'=>'btn btn-danger btn-xs ','escape'=>false,'confirm' => __('Êtes vous sûr de vouloir supprimer {0} {1} ?', $suppliers->first_name, $suppliers->last_name)]) ?>
+                            <?= $this->Form->postLink($this->Html->tag('i',"",['class'=>'fa fa-trash-o'])._('Supprimer'), ['action' => 'delete', $suppliers->id],['class'=>'btn btn-danger btn-xs ','escape'=>false,'confirm' => __('Êtes vous sûr de vouloir supprimer {0}?',$suppliers->id)]) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>

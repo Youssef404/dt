@@ -31,26 +31,46 @@
     <div class="related">
         <h4><?= __('Related Vouchers') ?></h4>
         <?php if (!empty($employee->vouchers)): ?>
-            <table cellpadding="0" cellspacing="0">
+            <table class="table table-striped table-bordered" id="datatable-button">
+                <thead>
                 <tr>
                     <th scope="col"><?= __('Id') ?></th>
                     <th scope="col"><?= __('Date') ?></th>
-                    <th scope="col"><?= __('Employee Id') ?></th>
+                    <th scope="col"><?= __('Id employee') ?></th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
-                <?php foreach ($employee->vouchers as $vouchers): ?>
+                </thead>
+                <tbody>
+                <?php foreach ($vouchers as $voucher): ?>
                     <tr>
-                        <td><?= h($vouchers->id) ?></td>
-                        <td><?= h($vouchers->date) ?></td>
-                        <td><?= h($vouchers->employee_id) ?></td>
+                        <td><?= $this->Number->format($voucher->id) ?></td>
+                        <td><?= h($voucher->date->format('d/m/Y')) ?></td>
+                        <td><?= h($voucher->employee_id) ?></td>
                         <td class="actions">
-                            <?= $this->Html->link(__('View'), ['controller' => 'Vouchers', 'action' => 'view', $vouchers->id]) ?>
-                            <?= $this->Html->link(__('Edit'), ['controller' => 'Vouchers', 'action' => 'edit', $vouchers->id]) ?>
-                            <?= $this->Form->postLink(__('Delete'), ['controller' => 'Vouchers', 'action' => 'delete', $vouchers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $vouchers->id)]) ?>
+                            <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-folder']).__('Afficher'), ['action' => 'view', $voucher->id],['class'=>'btn btn-primary btn-xs ','escape'=>false]) ?>
+                            <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-pencil']).__('Modifier'), ['action' => 'edit', $voucher->id],['class'=>'btn btn-info btn-xs ','escape'=>false]) ?>
+                            <?= $this->Form->postLink($this->Html->tag('i',"",['class'=>'fa fa-trash-o'])._('Supprimer'), ['action' => 'delete', $voucher->id],['class'=>'btn btn-danger btn-xs ','escape'=>false,'confirm' => __('Êtes vous sûr de vouloir supprimer {0} {1} ?', $voucher->first_name, $voucher->last_name)]) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
+                </tbody>
             </table>
         <?php endif; ?>
     </div>
 </div>
+
+<script src="<?= $webroot ?>vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="<?= $webroot ?>vendors/jszip/dist/jszip.min.js"></script>
+<script src="<?= $webroot ?>vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="<?= $webroot ?>vendors/pdfmake/build/vfs_fonts.js"></script>

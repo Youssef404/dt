@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -61,8 +60,8 @@ class VouchersTable extends Table
             ->allowEmptyString('id', 'create');
 
         $validator
-            ->dateTime('date')
-            ->allowEmptyDateTime('date');
+            ->date('date')
+            ->allowEmptyDate('date');
 
         return $validator;
     }

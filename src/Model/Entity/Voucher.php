@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
@@ -8,7 +7,7 @@ use Cake\ORM\Entity;
  * Voucher Entity
  *
  * @property int $id
- * @property \Cake\I18n\FrozenTime|null $date
+ * @property \Cake\I18n\FrozenDate|null $date
  * @property int|null $employee_id
  *
  * @property \App\Model\Entity\Employee $employee
