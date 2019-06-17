@@ -39,8 +39,7 @@
                         <td class="actions">
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-folder']).__('Afficher'), ['controller'=>'Suppliers','action' => 'view', $suppliers->id],['class'=>'btn btn-primary btn-xs ','escape'=>false]) ?>
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-pencil']).__('Modifier'), ['controller'=>'Suppliers','action' => 'edit', $suppliers->id],['class'=>'btn btn-info btn-xs ','escape'=>false]) ?>
-                            <?= $this->Form->postLink($this->Html->tag('i',"",['class'=>'fa fa-trash-o'])._('Supprimer'), ['controller'=>'Suppliers','action' => 'delete', $suppliers->id],['class'=>'btn btn-danger btn-xs ','escape'=>false,'confirm' => __('Êtes vous sûr de vouloir supprimer {0}?',$suppliers->id)]) ?>
-                        </td>
+                            </td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -68,8 +67,7 @@
                         <td class="actions">
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-folder']).__('Afficher'), ['controller'=>'Vouchers','action' => 'view', $voucher->id],['class'=>'btn btn-primary btn-xs ','escape'=>false]) ?>
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-pencil']).__('Modifier'), ['controller'=>'Vouchers','action' => 'edit', $voucher->id],['class'=>'btn btn-info btn-xs ','escape'=>false]) ?>
-                            <?= $this->Form->postLink($this->Html->tag('i',"",['class'=>'fa fa-trash-o'])._('Supprimer'), ['controller'=>'Vouchers','action' => 'delete', $voucher->id],['class'=>'btn btn-danger btn-xs ','escape'=>false,'confirm' => __('Êtes vous sûr de vouloir supprimer {0}?', $voucher->id)]) ?>
-                        </td>
+                            </td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

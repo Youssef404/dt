@@ -41,7 +41,6 @@
                         <td class="actions">
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-folder']).__('Afficher'), ['controller'=>'Products','action' => 'view', $product->id],['class'=>'btn btn-primary btn-xs ','escape'=>false]) ?>
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-pencil']).__('Modifier'), ['controller'=>'Products','action' => 'edit', $product->id],['class'=>'btn btn-info btn-xs ','escape'=>false]) ?>
-                            <?= $this->Form->postLink($this->Html->tag('i',"",['class'=>'fa fa-trash-o'])._('Supprimer'), ['controller'=>'Products','action' => 'delete', $product->id],['class'=>'btn btn-danger btn-xs ','escape'=>false,'confirm' => __('Êtes vous sûr de vouloir supprimer {0} {1} ?', $product->first_name, $product->last_name)]) ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
