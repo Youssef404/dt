@@ -41,7 +41,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($vouchers as $voucher): ?>
+                <?php foreach ($employee->vouchers as $voucher): ?>
                     <tr>
                         <td><?= $this->Number->format($voucher->id) ?></td>
                         <td><?= h($voucher->date->format('d/m/Y')) ?></td>
