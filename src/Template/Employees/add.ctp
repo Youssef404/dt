@@ -15,8 +15,7 @@ $this->assign('title', 'Test');
                 <br/>
                 <?php echo $this->Form->create($employee, ['class' => 'form-horizontal form-label-left']); ?>
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">First
-                        Name <span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prenom <span class="required">*</span>
                     </label>
                     <div class="input-group col-md-6 col-sm-6 col-xs-12">
                         <?php echo $this->Form->input('first_name', [
@@ -29,8 +28,7 @@ $this->assign('title', 'Test');
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last
-                        Name <span class="required">*</span>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Nom <span class="required">*</span>
                     </label>
                     <div class="input-group col-md-6 col-sm-6 col-xs-12">
                         <?php echo $this->Form->input('last_name', [
@@ -57,7 +55,7 @@ $this->assign('title', 'Test');
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Hire date
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Date de recrutement
                         <span class="required">*</span> </label>
                     <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='myDatepicker1'>
                         <?php echo $this->Form->input('hire_date', [
@@ -73,7 +71,7 @@ $this->assign('title', 'Test');
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Birth date
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Date de naissance
                         <span class="required">*</span> </label>
                     <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='myDatepicker2'>
                         <?php echo $this->Form->input('birth_date', [
