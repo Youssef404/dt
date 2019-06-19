@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product[]|\Cake\Collection\CollectionInterface $products
  */
+$this->assign('title', 'Liste de produits');
 ?>
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">

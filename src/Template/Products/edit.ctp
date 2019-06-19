@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product $product
  */
+$this->assign('title', 'Modification de produit');
 ?>
 <div class="clearfix"></div>
 <div class="row">

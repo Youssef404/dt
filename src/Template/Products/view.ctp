@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Product $product
  */
+$this->assign('title', 'Détails');
 ?>
 <div class="products view large-9 medium-8 columns content">
     <h3><?= h($product->name) ?></h3>

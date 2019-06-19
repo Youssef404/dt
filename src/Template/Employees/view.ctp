@@ -3,6 +3,9 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Employee $employee
  */
+
+$this->assign('title', 'Détails');
+
 ?>
 <div class="employees view large-9 medium-8 columns content">
     <h3>Id : <?= h($employee->id) ?></h3>

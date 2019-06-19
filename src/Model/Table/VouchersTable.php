@@ -60,8 +60,16 @@ class VouchersTable extends Table
             ->allowEmptyString('id', 'create');
 
         $validator
-            ->date('date')
-            ->allowEmptyDate('date');
+            ->dateTime('date')
+            ->allowEmptyDateTime('date');
+
+        $validator
+            ->boolean('type')
+            ->allowEmptyString('type');
+
+        $validator
+            ->numeric('montant')
+            ->allowEmptyString('montant');
 
         return $validator;
     }

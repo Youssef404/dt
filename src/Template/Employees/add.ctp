@@ -1,16 +1,11 @@
 <?php
-$this->assign('title', 'Test');
+    $this->assign('title','Ajout d\'employé');
 ?>
 
 <div class="clearfix"></div>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-            <div class="x_title">
-                <h2>Ajouter un employé
-                </h2>
-                <div class="clearfix"></div>
-            </div>
             <div class="x_content">
                 <br/>
                 <?php echo $this->Form->create($employee, ['class' => 'form-horizontal form-label-left']); ?>

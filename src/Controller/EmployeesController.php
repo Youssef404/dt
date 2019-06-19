@@ -131,5 +131,6 @@ class EmployeesController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['add']);
+
     }
 }

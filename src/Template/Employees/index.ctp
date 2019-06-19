@@ -3,6 +3,9 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Employee[]|\Cake\Collection\CollectionInterface $employees
  */
+
+$this->assign('title', 'Ajout d\'employé');
+
 ?>
 
 <div class="col-md-12 col-sm-12 col-xs-12">

@@ -4,18 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Voucher Entity
+ * ProductsVoucher Entity
  *
- * @property int $id
- * @property \Cake\I18n\FrozenTime|null $date
- * @property int|null $employee_id
- * @property bool|null $type
- * @property float|null $montant
+ * @property int $product_id
+ * @property int $voucher_id
+ * @property int $quantity
+ * @property float|null $unit_price
  *
- * @property \App\Model\Entity\Employee $employee
- * @property \App\Model\Entity\Product[] $products
+ * @property \App\Model\Entity\Product $product
+ * @property \App\Model\Entity\Voucher $voucher
  */
-class Voucher extends Entity
+class ProductsVoucher extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -27,11 +26,9 @@ class Voucher extends Entity
      * @var array
      */
     protected $_accessible = [
-        'date' => true,
-        'employee_id' => true,
-        'type' => true,
-        'montant' => true,
-        'employee' => true,
-        'products' => true
+        'quantity' => true,
+        'unit_price' => true,
+        'product' => true,
+        'voucher' => true
     ];
 }

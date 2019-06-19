@@ -13,7 +13,6 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,8 +20,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?= $this->fetch('title').' - Dar Attalib' ?>
     </title>
 
 
@@ -46,6 +44,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           rel="stylesheet">
     <link href="<?= $webroot ?>vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="<?= $webroot ?>vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="<?=$webroot?>vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- Custom styling plus plugins -->
     <link href="<?= $webroot ?>build/css/custom.css" rel="stylesheet">
 </head>
@@ -61,7 +60,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         }
         ?>
         <?= $this->element('content') ?>
-        <?= $this->request->getParam('action')=='login'? null:$this->element('footer') ?>
     </div>
 </div>
 
@@ -81,6 +79,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <script src="<?= $webroot ?>vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 <script src="<?= $webroot ?>vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
 <script src="<?= $webroot ?>vendors/google-code-prettify/src/prettify.js"></script>
+<script src="<?= $webroot ?>vendors/iCheck/icheck.min.js"></script>
 
 
 <!-- Custom Theme Scripts -->

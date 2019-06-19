@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Vouchers Controller
@@ -54,10 +55,12 @@ class VouchersController extends AppController
         $voucher = $this->Vouchers->newEntity();
         if ($this->request->is('post')) {
             $voucher = $this->Vouchers->patchEntity($voucher, $this->request->getData());
+            $voucher->date = new Time();
+            $voucher->employee_id = $this->Auth->user('id');
             if ($this->Vouchers->save($voucher)) {
                 $this->Flash->success(__('The voucher has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'ProductsVouchers','action' => 'add',$voucher->id]);
             }
             $this->Flash->error(__('The voucher could not be saved. Please, try again.'));
         }

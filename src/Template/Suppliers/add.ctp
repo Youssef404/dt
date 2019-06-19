@@ -9,11 +9,6 @@
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
-            <div class="x_title">
-                <h2>Ajouter un employé
-                </h2>
-                <div class="clearfix"></div>
-            </div>
             <div class="x_content">
                 <br/>
                 <?php echo $this->Form->create($supplier, ['class' => 'form-horizontal form-label-left']); ?>
@@ -25,6 +20,19 @@
                         <?php echo $this->Form->input('name', [
                             'type' => 'text',
                             'class' => 'form-control col-md-7 col-xs-12',
+                            'label' => '',
+                            'required' => true,
+                            'allowEmpty' => false
+                        ]); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Produits
+                        <span class="required">*</span></label>
+                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
+                        <?php echo $this->Form->control('products._ids',[
+                            'options' => $products,
+                            'class' => 'form-control',
                             'label' => '',
                             'required' => true,
                             'allowEmpty' => false
