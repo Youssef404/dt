@@ -81,4 +81,25 @@ class ProductsVouchersTable extends Table
 
         return $rules;
     }
+
+    public function afterSave($event,$entity,$options)
+    {
+        if($entity->isNew())
+        {
+            $voucher = $this->Vouchers->get($entity['voucher_id']);
+            $product = $this->Products->get($entity['product_id']);
+            if($voucher->type==0)
+            {
+                $product->quantity = $product->quantity + $entity['quantity'];
+                $this->Products->save($product);
+
+            }elseif ($voucher->type==1)
+            {
+                $product->quantity = $product->quantity - $entity['quantity'];
+                $this->Products->save($product);
+            }
+        }
+
+
+    }
 }

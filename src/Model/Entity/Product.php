@@ -9,7 +9,6 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property int|null $min_quantity
- * @property float $unit_price
  * @property int|null $quantity
  *
  * @property \App\Model\Entity\Supplier[] $suppliers
@@ -29,7 +28,6 @@ class Product extends Entity
     protected $_accessible = [
         'name' => true,
         'min_quantity' => true,
-        'unit_price' => true,
         'quantity' => true,
         'suppliers' => true,
         'vouchers' => true

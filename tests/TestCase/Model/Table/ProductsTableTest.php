@@ -71,4 +71,14 @@ class ProductsTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    /**
+     * Test afterSave method
+     *
+     * @return void
+     */
+    public function testAfterSave()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
 }

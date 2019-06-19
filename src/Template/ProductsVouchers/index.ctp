@@ -4,16 +4,7 @@
  * @var \App\Model\Entity\ProductsVoucher[]|\Cake\Collection\CollectionInterface $productsVouchers
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Products Voucher'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Products'), ['controller' => 'Products', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Product'), ['controller' => 'Products', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Vouchers'), ['controller' => 'Vouchers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Voucher'), ['controller' => 'Vouchers', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="productsVouchers index large-9 medium-8 columns content">
     <h3><?= __('Products Vouchers') ?></h3>
     <table cellpadding="0" cellspacing="0">

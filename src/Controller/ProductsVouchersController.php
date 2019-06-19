@@ -57,7 +57,7 @@ class ProductsVouchersController extends AppController
             $productsVoucher->product_id = $this->request->getData('product_id');
             if ($this->ProductsVouchers->save($productsVoucher)) {
                 $this->Flash->success(__('The products voucher has been saved.'));
-                if($this->request->getData('btn')=='Ajouter un autre')
+                if($this->request->getData('btn')=='autre')
                 {
                     return $this->redirect(['action'=>'add',$voucher]);
                 }
@@ -68,9 +68,10 @@ class ProductsVouchersController extends AppController
             }
             $this->Flash->error(__('Le bon n\'a pas pu être sauvegardé'));
         }
+        $voucher = $this->ProductsVouchers->Vouchers->get($voucher);
         $products = $this->ProductsVouchers->Products->find('list', ['limit' => 200]);
         $vouchers = $this->ProductsVouchers->Vouchers->find('list', ['limit' => 200]);
-        $this->set(compact('productsVoucher', 'products', 'vouchers'));
+        $this->set(compact('productsVoucher', 'products', 'vouchers','voucher'));
     }
 
     /**

@@ -72,14 +72,14 @@ class ProductsTable extends Table
             ->allowEmptyString('min_quantity');
 
         $validator
-            ->numeric('unit_price')
-            ->requirePresence('unit_price', 'create')
-            ->allowEmptyString('unit_price', false);
-
-        $validator
             ->integer('quantity')
             ->allowEmptyString('quantity');
 
         return $validator;
+    }
+
+    public function afterSave($event,$entity,$options)
+    {
+
     }
 }

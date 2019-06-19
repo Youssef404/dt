@@ -9,7 +9,6 @@ $this->assign('title', 'Détails de bon')
 
 <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
-        <?= $this->Flash->render() ?>
         <div class="x_content">
             <?php echo $this->Form->create($productsVoucher, ['class' => 'form-horizontal form-label-left']); ?>
             <div class="form-group">
@@ -40,6 +39,7 @@ $this->assign('title', 'Détails de bon')
                     ]); ?>
                 </div>
             </div>
+            <?php if($voucher->type==0){?>
             <div class="form-group">
                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Prix unitaire<span
                             class="required">*</span>
@@ -47,12 +47,11 @@ $this->assign('title', 'Détails de bon')
                 <div class="input-group col-md-6 col-sm-6 col-xs-12">
                     <?php echo $this->Form->control('unit_price', [
                         'class' => 'form-control col-md-7 col-xs-12',
-                        'label' => '',
-                        'required' => true,
-                        'allowEmpty' => false
+                        'label' => ''
                     ]); ?>
                 </div>
             </div>
+            <?php }?>
             <div class="ln_solid"></div>
             <div class="form-group">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -60,6 +59,7 @@ $this->assign('title', 'Détails de bon')
                         'type' => 'submit',
                         'class' => 'btn btn-success',
                         'name' => 'btn',
+                        'value' => 'autre'
                     ]); ?>
 
                     <?php echo $this->Form->button('Terminer', [
