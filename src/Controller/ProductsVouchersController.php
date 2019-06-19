@@ -66,7 +66,7 @@ class ProductsVouchersController extends AppController
                 }
 
             }
-            $this->Flash->error(__('The products voucher could not be saved. Please, try again. '));
+            $this->Flash->error(__('Le bon n\'a pas pu être sauvegardé'));
         }
         $products = $this->ProductsVouchers->Products->find('list', ['limit' => 200]);
         $vouchers = $this->ProductsVouchers->Vouchers->find('list', ['limit' => 200]);
