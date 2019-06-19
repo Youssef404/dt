@@ -4,16 +4,16 @@
  * @var \App\Model\Entity\ProductsVoucher[]|\Cake\Collection\CollectionInterface $productsVouchers
  */
 ?>
-
-<div class="productsVouchers index large-9 medium-8 columns content">
-    <h3><?= __('Products Vouchers') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_content">
+    <table class="table table-striped table-bordered" id="datatable-button">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('product_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('voucher_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('quantity') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('unit_price') ?></th>
+                <th scope="col"><?= __('Id de produit') ?></th>
+                <th scope="col"><?= __('Id de bon') ?></th>
+                <th scope="col"><?= __('Quantité') ?></th>
+                <th scope="col"><?= __('Prix unitaire') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,14 +33,63 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+</div>
     </div>
 </div>
+
+<script src="<?= $webroot ?>vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="<?= $webroot ?>vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="<?= $webroot ?>vendors/jszip/dist/jszip.min.js"></script>
+<script src="<?= $webroot ?>vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="<?= $webroot ?>vendors/pdfmake/build/vfs_fonts.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable-button').dataTable({
+            "language": {
+                "url": "<?= $webroot ?>localization/French.lang"
+            },
+            buttons: [
+                {
+                    extend: 'copy',
+                    text: 'Copier',
+                    exportOptions: {
+                        columns: 'th:not(:last-child)'
+                    }
+                }
+                , {
+                    extend: 'excel',
+                    text: 'Excel',
+                    exportOptions: {
+                        columns: 'th:not(:last-child)'
+                    }
+                }
+                , {
+                    extend: 'pdf',
+                    text: 'PDF',
+                    exportOptions: {
+                        columns: 'th:not(:last-child)'
+                    }
+                },
+                {
+                    extend: 'print',
+                    text: 'Imprimer',
+                    exportOptions: {
+                        columns: 'th:not(:last-child)'
+                    }
+                }
+            ],
+            dom: "lBfrtip",
+
+        });
+    });
+</script>
