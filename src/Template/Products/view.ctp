@@ -16,10 +16,6 @@ $this->assign('title', 'Détails');
             <th scope="row" class="col-lg-4"><?= __('Min Quantity') ?></th>
             <td><?= $this->Number->format($product->min_quantity) ?></td>
         </tr>
-        <tr>
-            <th scope="row" class="col-lg-4"><?= __('Unit Price') ?></th>
-            <td><?= $this->Number->format($product->unit_price) ?></td>
-        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Suppliers') ?></h4>
