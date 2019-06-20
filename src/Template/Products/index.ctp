@@ -14,7 +14,6 @@ $this->assign('title', 'Liste de produits');
                     <th scope="col"><?= __('Id') ?></th>
                     <th scope="col"><?= __('Nom') ?></th>
                     <th scope="col"><?= __('Quantité minimal') ?></th>
-                    <th scope="col"><?= __('Prix unitaire') ?></th>
                     <th scope="col"><?= __('Quantité') ?></th>
                     <th scope="col" class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -25,7 +24,6 @@ $this->assign('title', 'Liste de produits');
                         <td><?= $this->Number->format($product->id) ?></td>
                         <td><?= h($product->name) ?></td>
                         <td><?= h($product->min_quantity) ?></td>
-                        <td><?= h($product->unit_price) ?></td>
                         <td><?= h($product->quantity) ?></td>
                         <td class="actions">
                             <?= $this->Html->link($this->Html->tag('i',"",['class'=>'fa fa-folder']).__('Afficher'), ['action' => 'view', $product->id],['class'=>'btn btn-primary btn-xs ','escape'=>false]) ?>

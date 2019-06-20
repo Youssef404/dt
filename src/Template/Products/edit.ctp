@@ -42,18 +42,6 @@ $this->assign('title', 'Modification de produit');
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="Role">Prix unitaire <span class="required">*</span>
-                    </label>
-                    <div class="input-group col-md-6 col-sm-6 col-xs-12">
-                        <?php echo $this->Form->control('unit_price',[
-                            'class' => 'form-control col-md-7 col-xs-12',
-                            'label' => '',
-                            'required' => true,
-                            'allowEmpty' => false
-                        ]); ?>
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Quantité
                         <span class="required">*</span> </label>
                     <div class='input-group col-md-6 col-sm-6 col-xs-12'>
